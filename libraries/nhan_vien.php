@@ -41,6 +41,6 @@ class nhan_vien_van_phong extends nhan_vien {
 }
 
 class nhan_vien_san_xuat extends nhan_vien {
-
+    
 }
 ?>
