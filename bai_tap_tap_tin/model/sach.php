@@ -57,6 +57,40 @@ class sach {
         <?php
     }
 
+    function in_menu_sach(){
+        ?>
+        <div class="item_menu_sach">
+            <a href="?ma_sach=<?php echo $this->ma_sach ?>">
+            <?php
+                echo $this->ten_sach;
+            ?>
+            </a>
+        </div>
+        <?php
+    }
+
+    function in_thong_tin_chi_tiet_sach(){
+        ?>
+        <div class="item_thong_tin_sach">
+            <div class="ten_sach">
+                <?php echo $this->ten_sach; ?>
+            </div>
+            <div class="hinh_sach">
+                <img src="<?php echo $this->hinh; ?>" alt="">
+            </div>
+            <div class="tac_gia">
+                <?php echo $this->tac_gia; ?>
+            </div>
+            <div class="don_gia">
+                <?php echo $this->don_gia; ?>
+            </div>
+            <div class="nha_xuat_ban">
+                <?php echo $this->nha_xuat_ban; ?>
+            </div>
+        </div>
+        <?php
+    }
+
 
 }
 ?>

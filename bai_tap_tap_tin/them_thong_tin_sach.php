@@ -1,8 +1,17 @@
 <?php
 include('./model/sach.php');
 
-if(isset($_POST['ma_sach']) && isset($_POST['ten_sach']) && isset($_POST['don_gia']) && isset($_POST['tac_gia']) && isset($_POST['nha_xuat_ban']) && isset($_POST['hinh'])){
-    $sach_new = new sach($_POST['ma_sach'], $_POST['ten_sach'], $_POST['don_gia'], $_POST['tac_gia'], $_POST['nha_xuat_ban'], $_POST['hinh']);
+echo '<pre>',print_r($_POST),'</pre>';
+
+echo '<pre>',print_r($_FILES),'</pre>';
+
+if($_FILES['hinh']){
+    $thong_tin_hinh = './images/' . $_FILES['hinh']['name'];
+    move_uploaded_file($_FILES['hinh']['tmp_name'], $thong_tin_hinh);
+}
+
+if(isset($_POST['ma_sach']) && isset($_POST['ten_sach']) && isset($_POST['don_gia']) && isset($_POST['tac_gia']) && isset($_POST['nha_xuat_ban']) && $thong_tin_hinh){
+    $sach_new = new sach($_POST['ma_sach'], $_POST['ten_sach'], $_POST['don_gia'], $_POST['tac_gia'], $_POST['nha_xuat_ban'], $thong_tin_hinh);
 
     //echo '<pre>',print_r($sach_new),'</pre>';
 
@@ -27,7 +36,7 @@ if(isset($_POST['ma_sach']) && isset($_POST['ten_sach']) && isset($_POST['don_gi
 <body>
     <div class="container">
         
-        <form action="" method="POST" class="form-horizontal" role="form">
+        <form action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
                 <div class="form-group">
                     <legend>Thêm thông tin sách</legend>
                 </div>
@@ -49,6 +58,7 @@ if(isset($_POST['ma_sach']) && isset($_POST['ten_sach']) && isset($_POST['don_gi
                         <input type="text" name="ten_sach" id="input" class="form-control">
                     </div>
                 </div>
+                
 
                 <div class="form-group">
                     <div class="col-sm-2">
@@ -82,7 +92,7 @@ if(isset($_POST['ma_sach']) && isset($_POST['ten_sach']) && isset($_POST['don_gi
                         Hình
                     </div>
                     <div class="col-sm-10">
-                        <input type="text" name="hinh" id="input" class="form-control">
+                        <input type="file" name="hinh" id="input" class="form-control">
                     </div>
                 </div>
         
