@@ -1,4 +1,5 @@
 <?php
+include_once('./libraries/function_support.php');
 
 if(isset($_GET['page'])){
     if($_GET['page'] == 'sach'){
