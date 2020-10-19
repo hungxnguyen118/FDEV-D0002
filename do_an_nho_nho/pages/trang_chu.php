@@ -10,25 +10,11 @@ $ds_sach_noi_bat = $xl_sach->ds_sach_noi_bat();
 
 $ds_sach_moi = $xl_sach->ds_sach_moi();
 
+$ds_sach_ban_chay = $xl_sach->ds_sach_ban_chay();
+
 //echo '<pre>',print_r($ds_slide_banner),'</pre>';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    
-    <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="//code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="./public/css/main.css">
-    
-</head>
 <body class="main_content">
     <div class="container-fluid">
 
@@ -62,6 +48,20 @@ $ds_sach_moi = $xl_sach->ds_sach_moi();
 
 
         <div class="sach_noi_bat">
+
+            <div class="container-fluid module_sach_noi_bat">
+                    <div class="title_module">
+                        Sách bán chạy
+                    </div>
+                    
+                    <div class="ds_sach">
+
+                    <?php
+                    in_ds_sach_theo_data_truyen_vao($ds_sach_ban_chay);
+                    ?>
+
+                    </div>
+            </div>
             
             
             <div class="container-fluid module_sach_noi_bat">
