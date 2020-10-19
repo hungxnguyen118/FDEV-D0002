@@ -1,3 +1,7 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .main_content {
     .container-fluid {
         padding: 0;
@@ -21,6 +25,47 @@
             }
         }
     }
+
+    .title_module {
+        font-size: 20px;
+        color: #14855a;
+        border-bottom: 1px solid #14855a;
+    }
 }
 
 
+.navbar-inverse {
+    background-color: #14855a;
+
+    .dropdown_button {
+        padding: 15px;
+        
+        &.active{
+            background: #000;
+            color:#fff;
+        }
+    }
+
+    ul.dropdown-menu {
+        &.active {
+            display: block;
+        }
+    }
+
+    li.dropdown-submenu {
+        position: relative;
+
+        ul.dropdown-menu {
+            top: -5px;
+            left: 99%;
+            padding: 10px;
+        }
+
+        &:hover {
+            ul.dropdown-menu {
+                display: block;
+            }
+        }
+    }
+    
+}
