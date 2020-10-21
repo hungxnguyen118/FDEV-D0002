@@ -62,7 +62,7 @@
         }
 
         &:hover {
-            ul.dropdown-menu {
+            > ul.dropdown-menu {
                 display: block;
             }
         }

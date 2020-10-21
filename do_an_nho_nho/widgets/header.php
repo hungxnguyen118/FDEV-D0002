@@ -2,7 +2,9 @@
 include_once('./model/xl_loai_sach.php');
 
 $xl_loai_sach = new xl_loai_sach();
-$ds_loai_sach_cha = $xl_loai_sach->ds_loai_sach_theo_id_cha();
+//$ds_loai_sach_cha = $xl_loai_sach->ds_loai_sach_theo_id_cha();
+
+$ds_loai_cha = $xl_loai_sach->ds_tat_ca_loai_sach_theo_cha();
 ?>
 
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
@@ -26,35 +28,8 @@ $ds_loai_sach_cha = $xl_loai_sach->ds_loai_sach_theo_id_cha();
                 <ul class="dropdown-menu">
                     
                     <?php
-                    foreach($ds_loai_sach_cha as $loai_sach){
-
-                        $ds_con = $xl_loai_sach->ds_loai_sach_theo_id_cha($loai_sach->id);
-
-                        //print_r($ds_con);
-                        if(count($ds_con) > 0){
-                            ?>
-                            <li class="dropdown-submenu">
-                                <a href="#"><?php echo $loai_sach->ten_loai_sach; ?></a>
-                                <ul class="dropdown-menu hidden-xs hidden-sm">
-                                    <?php
-                                    foreach($ds_con as $loai_sach_con){
-                                        ?>
-                                        <li>
-                                            <a href=""><?php echo $loai_sach_con->ten_loai_sach; ?></a>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </li>
-                            <?php
-                        }
-                        else{
-                            ?>
-                            <li><a href="#"><?php echo $loai_sach->ten_loai_sach; ?></a></li>
-                            <?php
-                        }
-                    }
+                    //echo '<pre>',print_r($ds_loai_cha),'</pre>';
+                    $xl_loai_sach->print_ds_tat_ca_loai_sach_theo_cha($ds_loai_cha);
                     ?>
                     
                 </ul>
