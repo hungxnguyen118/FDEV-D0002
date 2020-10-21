@@ -27,4 +27,13 @@ function in_ds_sach_theo_data_truyen_vao($ds_sach_can_in){
         <?php
     }
 }
+
+function import_file($url_file){
+    if(file_exists($url_file . '.php')){
+        include_once($url_file . '.php');
+    }
+    else{
+        echo 'Check lại file này dùm ' . $url_file . '.php vì nó không tồn tại';
+    }
+}
 ?>

@@ -52,5 +52,16 @@ class xl_sach extends database{
         return $result;
     }
 
+    function lay_thong_tin_sach_theo_id($id_sach){
+        $string_sql = "SELECT s.*, ten_tac_gia 
+                        FROM bs_sach s JOIN bs_tac_gia tg ON s.id_tac_gia = tg.id
+                        WHERE s.id = " . $id_sach;
+        //echo $string_sql;exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $result = $this->loadRow();
+        return $result;
+    }
+
 }
 ?>

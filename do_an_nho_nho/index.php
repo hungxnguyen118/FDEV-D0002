@@ -12,6 +12,9 @@ if(isset($_GET['page'])){
     else if($_GET['page'] == 'loai-sach'){
         include_once('./pages/trang_sach_theo_loai.php');
     }
+    else if($_GET['page'] == 'chi-tiet-sach'){
+        include_once('./pages/trang_chi_tiet_sach.php');
+    }
     else{
         include_once('./pages/trang_chu.php');
     }

@@ -1,0 +1,266 @@
+/* slide banner */
+
+.slide img{
+	width: 100%;
+}
+
+/* END css slide banner */
+
+/* css chung các modules */
+
+.title_module{
+	font-size: 25px;
+	font-weight: bold;
+	color: #14855a;
+	border-bottom: 1px solid #14855a;
+}
+.btn_mua_ngay{
+	background: url("../images/cart.png") 5px 3px no-repeat #f80;
+	position: absolute;
+	padding: 5px 10px 5px 30px;
+	color: #fff;
+	font-weight: bold;
+	background-size: 25px;
+	right: 15px;
+	bottom: 10px;
+}
+
+/* END css chung các modules */
+
+/* css san pham noi bat */
+
+.item_sp_noi_bat .hinh_sach{
+    
+}
+
+.item_sp_noi_bat a{
+	text-decoration: none;
+}
+
+.item_sp_noi_bat .ten_sach{
+	display: block;
+	font-size: 13px;
+	color: #000;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+	margin: 8px auto 0;
+	height: 36px;
+	line-height: 18px;
+	font-weight: bold;
+}
+
+.item_sp_noi_bat .tac_gia{
+	padding: 5px 0 0;
+	color: #777;
+	font-size: 11px;
+	text-align: left;
+}
+
+.item_sp_noi_bat .don_gia_ban{
+	font-size: 14px;
+    color: #444;
+    font-weight: 700;
+    padding: 5px 0 0;
+    text-align: left;
+}
+
+.item_sp_noi_bat .don_gia_bia{
+	font-size: 11px;
+	color: #999;
+	text-decoration: line-through;
+	display: block;
+	text-align: left;
+	min-height: 20px;
+	padding-top: 5px;
+}
+
+.item_sp_noi_bat .hinh_sach img{
+	width: 100%;
+}
+
+.item_sp_noi_bat{
+	margin: 15px 0;
+	cursor: pointer;
+	transition-duration: 0.2s;
+	padding-bottom: 10px;
+}
+
+.item_sp_noi_bat:hover{
+	box-shadow: 5px 5px 15px #888;
+}
+
+/* END css san pham noi bat */
+
+/* css cac san pham ban chay */
+
+.best_sell{
+	background: url("../images/bestsell.jpg") no-repeat;
+	background-size: cover;
+	width: 65px;
+	height: 65px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #f00;
+	font-size: 20px;
+	text-align: center;
+	line-height: 45px;
+	font-weight: bold;
+}
+
+/* END css cac san pham ban chay */
+
+/* css menu */
+
+.navbar-inverse{
+    background-color: #14855a;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand{
+	color: #ddd;
+}
+
+/* END css menu */
+
+/* css footer */
+
+footer.footer-content .duong_ngang{
+	border-top: 1px solid #ddd;
+	margin: 20px auto;
+}
+
+footer.footer-content .footer-address {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.8;
+    padding-top: 0;
+}
+
+footer.footer-content .footer-certificate-box .footer-payment {
+    float: right;
+    display: block;
+    text-align: center;
+}
+
+footer.footer-content .footer-certificate-box .footer-trust {
+    float: right;
+    margin-left: 20px;
+    display: block;
+    text-align: center;
+    width: 170px;
+}
+
+footer.footer-content .footer-trust img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* END css footer */
+
+/* css chung */
+
+.glyphicon-shopping-cart{
+	font-size: 20px;
+}
+
+@keyframes gio_hang{
+	0%{transform: rotate(-15deg); padding: 3px 9px;}
+	50%{transform: rotate(-15deg); padding: 3px 9px;}
+	55%{transform: rotate(-30deg);}
+	60%{transform: rotate(-30deg);padding: 5px 11px;}
+	70%{transform: rotate(0deg); }
+	75%{transform: rotate(-15deg); padding: 3px 9px;}
+	100%{transform: rotate(-15deg); padding: 3px 9px;}
+}
+
+.so_luong_gio_hang{
+	position: absolute;
+	background: #f00;
+	padding: 3px 9px;
+	border-radius: 30px 30px 30px 0;
+	top: -5px;
+	left: 30px;
+	animation: gio_hang 2s infinite;
+}
+
+/* END css chung */
+
+/* css trang gio hang */
+
+.ds_nut_dieu_khien{
+	text-align: right;
+}
+
+.gio_hang input[type="number"]{
+	max-width: 60px;
+    text-align: center;
+}
+
+.tong_tien{
+	font-weight: bold;
+}
+
+
+
+/* END css trang gio hang */
+
+
+/* css trang chi tiet sach */
+
+.doc_thu_sach{
+    background: url("../images/read_icon.png") no-repeat 10px 10px;
+    background-size: 30px 30px;
+    font-size: 20px;
+    color: #14855A;
+    padding: 10px 10px 5px 45px;
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+}
+
+.sach_doc_thu{
+	/*width: 80%; */
+    height: 90%;
+    overflow-y: scroll;
+    /* margin: auto; */
+    /* margin-top: 2%; */
+}
+
+.sach_doc_thu img{
+	width: 80%;
+}
+
+.sach_doc_thu::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sach_doc_thu::-webkit-scrollbar-thumb {
+    background: #14855a;
+    border-radius: 10px;
+}
+
+.sach_doc_thu::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.dong_doc_thu{
+	border-radius: 50%!important;
+	float: left;
+	width: 30px;
+	height: 30px;
+	color: #fff;
+	opacity: 1;
+	margin-top: -10px;
+	margin-left: -10px;
+	background: #14855a!important;
+}
+
+/* END css trang chi tiet sach */

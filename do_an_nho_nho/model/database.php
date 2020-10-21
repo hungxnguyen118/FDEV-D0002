@@ -20,5 +20,9 @@ class database {
         return $this->sth->fetchAll(PDO::FETCH_OBJ);
     }
 
+    function loadRow(){
+        return $this->sth->fetch(PDO::FETCH_OBJ);
+    }
+
 }
 ?>
