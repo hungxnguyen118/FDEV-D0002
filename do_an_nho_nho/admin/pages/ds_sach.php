@@ -1,4 +1,7 @@
 <?php
+//$ten_dang_nhap = $_SESSION['ten_dang_nhap'];
+//echo $ten_dang_nhap;
+
 $so_sach_tren_trang = 10;
 
 $db = new PDO('mysql:host=localhost;dbname=ban_sach_online_db', 'root', '');
