@@ -33,12 +33,14 @@ $thong_tin_sach = $xl_sach->lay_thong_tin_sach_theo_id($_GET['id_sach']);
             </div>
             <div class="include_xu_ly_gio_hang">
                 
-                <input type="number" name="" id="input" class="form-control" value="" required="required" title="">
-                
-                <button type="button" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                    Thêm vào giỏ hàng
-                </button>
+                <form action="/test_php/do_an_nho_nho/?page=gio-hang" method="POST">
+                    <input type="number" name="so_luong" id="input" class="form-control" value="" required="required" title="">
+                    <input type="hidden" name="id_sach" value="<?php echo $thong_tin_sach->id; ?>">
+                    <button type="submit" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        Thêm vào giỏ hàng
+                    </button>
+                </form>
                 
                 
             </div>
