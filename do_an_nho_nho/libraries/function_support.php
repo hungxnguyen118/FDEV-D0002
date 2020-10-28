@@ -38,4 +38,22 @@ function import_file($url_file){
         echo 'Check lại file này dùm ' . $url_file . '.php vì nó không tồn tại';
     }
 }
+
+
+function tinh_tong_tien_gio_hang(){
+    if(isset($_SESSION['gio_hang'])){
+        $mang_gio_hang = $_SESSION['gio_hang'];
+    }
+    else{
+        $mang_gio_hang = [];
+    }
+
+
+    $tong_tien = 0;
+    foreach($mang_gio_hang as $item_gio_hang){
+        $tong_tien += $item_gio_hang->so_luong * $item_gio_hang->don_gia;
+    }
+
+    return $tong_tien;
+}
 ?>

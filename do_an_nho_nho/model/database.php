@@ -24,5 +24,9 @@ class database {
         return $this->sth->fetch(PDO::FETCH_OBJ);
     }
 
+    function lasInsertId(){
+        return $this->db->lastInsertId();
+    }
+
 }
 ?>

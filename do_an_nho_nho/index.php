@@ -28,6 +28,9 @@ if(isset($_GET['page'])){
     else if($_GET['page'] == 'gio-hang'){
         include_once('./pages/trang_gio_hang.php');
     }
+    else if($_GET['page'] == 'thanh-toan'){
+        include_once('./pages/trang_thanh_toan.php');
+    }
     else{
         include_once('./pages/trang_chu.php');
     }
