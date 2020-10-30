@@ -22,6 +22,9 @@ if(isset($_POST['ho_ten_nguoi_nhan']) && isset($_SESSION['gio_hang'])){
 
     if($id_vua_them){
 
+        //echo 
+        $ds_mat_hang = print_chuoi_html_gio_hang();
+
         //send mail cho user tai đây
         $phpmail =  new PHPMailer();
 
@@ -39,7 +42,8 @@ if(isset($_POST['ho_ten_nguoi_nhan']) && isset($_SESSION['gio_hang'])){
         $phpmail->From = "hungnguyenxuan118@gmail.com";
         $phpmail->Subject = "Cám ơn bạn đặt hàng tại Bán sách online của chúng tôi";
 
-        $phpmail->Body = 'Test thử email';
+        $phpmail->Body = '<div>Bạn đã đặt mua các sản phẩm với danh sách sau:</div>' . $ds_mat_hang 
+                            . '<div>Bạn có thể review đơn hàng <a href="' . create_url_review_don_hang($id_vua_them) . '">tại đây</a></div>';
         $phpmail->AddAddress($_POST['email_nguoi_nhan']);
 
         if(!$phpmail->Send())

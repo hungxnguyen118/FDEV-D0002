@@ -80,4 +80,40 @@ function decrypt_custom($string){
 
     return $new_string;
 }
+
+
+function print_chuoi_html_gio_hang(){
+
+    if(isset($_SESSION['gio_hang'])){
+        $mang_gio_hang = $_SESSION['gio_hang'];
+    }
+    else{
+        $mang_gio_hang = [];
+    }
+
+    $chuoi_mail_html = '<table  cellspacing="0" cellpadding="10px" border="1">
+        <tr>
+            <td>Tên sách</td>
+            <td>đơn giá</td>
+            <td>Số lượng</td>
+            <td>Thành tiền</td>
+        </tr>
+    ';
+    foreach($mang_gio_hang as $item_gio_hang){
+        $chuoi_mail_html .= '<tr>
+            <td>' . $item_gio_hang->ten_sach . '</td>
+            <td>' . $item_gio_hang->don_gia . '</td>
+            <td>' . $item_gio_hang->so_luong . '</td>
+            <td>' . $item_gio_hang->so_luong * $item_gio_hang->don_gia . '</td>
+        </tr>';
+    }
+    $chuoi_mail_html .= '</table>';
+
+    return $chuoi_mail_html;
+}
+
+
+function create_url_review_don_hang($id_don_hang){
+    return 'http://localhost:8181/test_php/do_an_nho_nho/?page=don-hang&id_don_hang=' . $id_don_hang;
+}
 ?>
