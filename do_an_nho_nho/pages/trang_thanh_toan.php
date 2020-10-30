@@ -1,10 +1,18 @@
 <?php
+import_file('./config/config');
+
 import_file('./model/xl_don_hang');
+
+import_file('./libraries/class.phpmailer');
+
+$config = new config();
+
+
 $xl_don_hang = new xl_don_hang();
 
 
 if(isset($_POST['ho_ten_nguoi_nhan']) && isset($_SESSION['gio_hang'])){
-    //echo '<pre>',print_r($_POST),'</pre>';\
+    //echo '<pre>',print_r($_POST),'</pre>';
     $tong_tien = tinh_tong_tien_gio_hang();
 
     $id_vua_them = $xl_don_hang->them_don_hang($_POST['ho_ten_nguoi_nhan'], $_POST['email_nguoi_nhan'], $_POST['so_dien_thoai_nguoi_nhan'],
@@ -13,13 +21,42 @@ if(isset($_POST['ho_ten_nguoi_nhan']) && isset($_SESSION['gio_hang'])){
     //echo $id_vua_them;
 
     if($id_vua_them){
-        unset($_SESSION['gio_hang']);
-        ?>
-        <script>
-            alert('đơn hàng đã đặt thành công!');
-            window.location.href = '/test_php/do_an_nho_nho/';
-        </script>
-        <?php
+
+        //send mail cho user tai đây
+        $phpmail =  new PHPMailer();
+
+        //setting send mail
+        $phpmail->IsSMTP();
+        $phpmail->CharSet = 'UTF-8';
+        $phpmail->SMTPAuth = true;
+        $phpmail->SMTPSecure = 'ssl';
+        $phpmail->Host = "smtp.gmail.com";
+        $phpmail->Port = 465;
+        $phpmail->IsHTML(true);
+        $phpmail->Username = $config->mail_user;
+        $phpmail->Password = $config->get_password_email();
+        $phpmail->SetFrom("hungnguyenxuan118@gmail.com");
+        $phpmail->From = "hungnguyenxuan118@gmail.com";
+        $phpmail->Subject = "Cám ơn bạn đặt hàng tại Bán sách online của chúng tôi";
+
+        $phpmail->Body = 'Test thử email';
+        $phpmail->AddAddress($_POST['email_nguoi_nhan']);
+
+        if(!$phpmail->Send())
+        {
+            echo "<script> alert('Trong lúc gửi mail xảy ra sự cố: " . $phpmail->ErrorInfo . "');</script>";
+        }
+        else
+        {
+            unset($_SESSION['gio_hang']);
+            ?>
+            <script>
+                alert('đơn hàng đã đặt thành công!');
+                window.location.href = '/test_php/do_an_nho_nho/';
+            </script>
+            <?php
+        }
+        
     }
 
 }

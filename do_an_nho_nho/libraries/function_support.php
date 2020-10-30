@@ -56,4 +56,28 @@ function tinh_tong_tien_gio_hang(){
 
     return $tong_tien;
 }
+
+
+function encrypt_custom($string){
+    $number_time = 10;
+    $new_string = $string;
+
+    for($i = 0; $i < $number_time; $i++){
+        $new_string = base64_encode($new_string);
+    }
+
+    return $new_string;
+}
+
+
+function decrypt_custom($string){
+    $number_time = 10;
+    $new_string = $string;
+
+    for($i = 0; $i < $number_time; $i++){
+        $new_string = base64_decode($new_string);
+    }
+
+    return $new_string;
+}
 ?>
