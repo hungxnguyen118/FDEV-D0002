@@ -11,11 +11,16 @@ $trang_hien_tai = (isset($_GET['trang']))?$_GET['trang']:0;
 
 $ds_sach_hien_thi = $xl_sach->ds_sach_phan_trang($trang_hien_tai, $so_sach_tren_trang);
 
-echo '<pre>',print_r($ds_sach_hien_thi),'</pre>';
+//echo '<pre>',print_r($ds_sach_hien_thi),'</pre>';
 
-// $so_luong_sach = count($ds_sach);
-// $so_trang = ceil($so_luong_sach/$so_sach_tren_trang);
+$so_luong_sach = ($xl_sach->so_luong_sach())->so_sach;
+//echo '<pre>',print_r($so_luong_sach),'</pre>';
+echo $so_luong_sach;
+$so_trang = ceil($so_luong_sach/$so_sach_tren_trang);
 ?>
+    <script type="text/javascript" src="./js/simple_pagination.js"></script>
+    <link rel="stylesheet" href="./css/simple_pagination.css">
+    
     <div class="title_page">
         Danh Sách Sách
     </div>
@@ -67,6 +72,14 @@ echo '<pre>',print_r($ds_sach_hien_thi),'</pre>';
         
     </div> -->
 
+    <div class="include_button">
+        
+        <a href="/test_php/do_an_nho_nho/admin/?page=them-sach">
+            <button type="button" class="btn btn-info">Thêm Sách Mới</button>
+        </a>
+        
+    </div>
+
     <table id="table_sach" class="table table-striped table-hover">
         <thead>
             <tr>
@@ -95,7 +108,11 @@ echo '<pre>',print_r($ds_sach_hien_thi),'</pre>';
             string_html += `
             <tr>
                 <td>${data_list[i].id}</td>
-                <td>${data_list[i].ten_sach}</td>
+                <td>
+                    <a href="/test_php/do_an_nho_nho/admin/?page=cap-nhat-sach&id_sach=${data_list[i].id}">
+                    ${data_list[i].ten_sach}
+                    </a>
+                </td>
                 <td>${data_list[i].don_gia}</td>
                 <td>${data_list[i].gia_bia}</td>
                 <td>
@@ -108,6 +125,19 @@ echo '<pre>',print_r($ds_sach_hien_thi),'</pre>';
         console.log(string_html);
 
         $('#data_show').html(string_html);
+    }
+
+
+    function get_ds_sach_theo_trang(pageNumber){
+        $.get('http://localhost:8181/test_php/do_an_nho_nho/admin/api.php?trang=' + (pageNumber - 1))
+            .done((data) => {
+                console.log(JSON.parse(data));
+
+                function_build_html(JSON.parse(data));
+            })
+            .fail((err) => {
+                console.log(err);
+            })
     }
 
     $(function() {
@@ -126,18 +156,12 @@ echo '<pre>',print_r($ds_sach_hien_thi),'</pre>';
                 //     // ... and then only show the appropriate rows.
                 //     .slice(showFrom, showTo).show();
 
-                $.get('http://localhost:8181/test_php/do_an_nho_nho/admin/api.php?trang=' + (pageNumber - 1))
-                    .done((data) => {
-                        console.log(JSON.parse(data));
-
-                        function_build_html(JSON.parse(data));
-                    })
-                    .fail((err) => {
-                        console.log(err);
-                    })
+                get_ds_sach_theo_trang(pageNumber);
 
             }
         });
+
+        get_ds_sach_theo_trang(1);
     });
     </script>
 </div>

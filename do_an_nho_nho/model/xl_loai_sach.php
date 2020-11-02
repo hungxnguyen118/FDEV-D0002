@@ -1,5 +1,5 @@
 <?php
-include_once('./model/database.php');
+check_and_include_model_database();
 
 class xl_loai_sach extends database{
 

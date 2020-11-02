@@ -7,6 +7,15 @@ class xl_sach extends database{
         parent::database();
     }
 
+    function so_luong_sach(){
+        $string_sql = "SELECT count(*) as so_sach FROM bs_sach";
+        //echo $string_sql; exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $result = $this->loadRow();
+        return $result;
+    }
+
     function ds_sach_theo_dieu_kien($dieu_kien, $gia_tri, $phuong_thuc_so_sanh = '='){
         $string_sql = "SELECT s.*, ten_tac_gia 
         FROM bs_sach s JOIN bs_tac_gia tg ON s.id_tac_gia = tg.id 
@@ -72,6 +81,18 @@ class xl_sach extends database{
         $this->execute();
         $result = $this->loadRow();
         return $result;
+    }
+
+
+    function them_sach($ten_sach, $id_tac_gia, $gioi_thieu, $doc_thu, $id_loai_sach, $id_nha_xuat_ban, $so_trang, $ngay_xuat_ban, $kich_thuoc, $sku, $trong_luong, $trang_thai, $hinh, $don_gia, $gia_bia, $noi_bat){
+        $string_sql = "INSERT INTO bs_sach (ten_sach, id_tac_gia, gioi_thieu, doc_thu, id_loai_sach, id_nha_xuat_ban, so_trang, ngay_xuat_ban, kich_thuoc, sku, trong_luong, trang_thai, hinh, don_gia, gia_bia, noi_bat) 
+        VALUES ('$ten_sach', '$id_tac_gia', '$gioi_thieu', '$doc_thu', '$id_loai_sach', '$id_nha_xuat_ban', '$so_trang', '$ngay_xuat_ban', '$kich_thuoc', '$sku', '$trong_luong', '$trang_thai', '$hinh', '$don_gia', '$gia_bia', '$noi_bat');";
+        //echo $string_sql;exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $last_insert_id = $this->lasInsertId();
+        return $last_insert_id;
+        
     }
 
 }

@@ -29,6 +29,12 @@ if(isset($_GET['page'])){
         if($_GET['page'] == 'sach'){
             include_once('./pages/ds_sach.php');
         }
+        else if($_GET['page'] == 'them-sach'){
+            include_once('./pages/them_sach.php');
+        }
+        else if($_GET['page'] == 'cap-nhat-sach'){
+            include_once('./pages/cap_nhat_sach.php');
+        }
         else if($_GET['page'] == 'dashboard'){
             include_once('./pages/dashboard.php');
         }
