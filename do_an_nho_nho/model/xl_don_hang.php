@@ -48,5 +48,30 @@ class xl_don_hang extends database{
 
     }
 
+
+    function thong_tin_don_hang($id_don_hang){
+        $string_sql = "SELECT *
+                        FROM bs_don_hang 
+                        WHERE id = " . $id_don_hang;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $result = $this->loadRow();
+
+        if($result){
+            $string_sql_ctdh = "SELECT *
+                        FROM bs_chi_tiet_don_hang ctdh
+                        JOIN bs_sach s 
+                        ON ctdh.id_sach = s.id
+                        WHERE id_don_hang = " . $id_don_hang;
+            $this->setSQL($string_sql_ctdh);
+            $this->execute();
+            $result_ctdh = $this->loadAllRow();
+
+            $result->ds_chi_tiet_don_hang = $result_ctdh;
+        }
+
+        return $result;
+    }
+
 }
 ?>

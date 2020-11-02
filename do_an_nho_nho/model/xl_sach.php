@@ -1,5 +1,5 @@
 <?php
-include_once('./model/database.php');
+check_and_include_model_database();
 
 class xl_sach extends database{
 
@@ -11,6 +11,17 @@ class xl_sach extends database{
         $string_sql = "SELECT s.*, ten_tac_gia 
         FROM bs_sach s JOIN bs_tac_gia tg ON s.id_tac_gia = tg.id 
                 WHERE $dieu_kien $phuong_thuc_so_sanh " . $gia_tri;
+        //echo $string_sql; exit;
+        $this->setSQL($string_sql);
+        $this->execute();
+        $result = $this->loadAllRow();
+        return $result;
+    }
+
+    function ds_sach_phan_trang($trang_hien_tai, $so_sach_tren_trang){
+        $string_sql = "SELECT s.*, ten_tac_gia 
+        FROM bs_sach s JOIN bs_tac_gia tg ON s.id_tac_gia = tg.id 
+        LIMIT " . $trang_hien_tai * $so_sach_tren_trang . ",$so_sach_tren_trang";
         //echo $string_sql; exit;
         $this->setSQL($string_sql);
         $this->execute();

@@ -1,13 +1,13 @@
 <?php
 session_start();
 
+include_once('./libraries/function_support.php');
+
 include_once('./model/xl_slide_banner.php');
 include_once('./model/xl_sach.php');
 
 $xl_slide_banner = new xl_slide_banner();
 $ds_slide_banner = $xl_slide_banner->ds_slide_banner();
-
-include_once('./libraries/function_support.php');
 
 include_once('./widgets/head.php');
 
@@ -30,6 +30,9 @@ if(isset($_GET['page'])){
     }
     else if($_GET['page'] == 'thanh-toan'){
         include_once('./pages/trang_thanh_toan.php');
+    }
+    else if($_GET['page'] == 'don-hang'){
+        include_once('./pages/trang_don_hang.php');
     }
     else{
         include_once('./pages/trang_chu.php');
