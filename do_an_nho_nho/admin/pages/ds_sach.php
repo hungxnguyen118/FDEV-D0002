@@ -3,6 +3,25 @@ include_once('../model/xl_sach.php');
 
 $xl_sach = new xl_sach();
 
+
+if(isset($_GET['id_xoa'])){
+    $id_xoa = $_GET['id_xoa'];
+    //echo $id_xoa;
+
+    if($id_xoa){
+        $result = $xl_sach->xoa_sach($id_xoa);
+        if($result){
+            ?>
+            <script>
+            alert('Xóa sách thành công!');
+            window.location.href = '/test_php/do_an_nho_nho/admin/?page=sach';
+            </script>
+            <?php
+        }
+    }
+}
+
+
 $so_sach_tren_trang = 10;
 
 $trang_hien_tai = (isset($_GET['trang']))?$_GET['trang']:0;
@@ -15,17 +34,18 @@ $ds_sach_hien_thi = $xl_sach->ds_sach_phan_trang($trang_hien_tai, $so_sach_tren_
 
 $so_luong_sach = ($xl_sach->so_luong_sach())->so_sach;
 //echo '<pre>',print_r($so_luong_sach),'</pre>';
-echo $so_luong_sach;
+//echo $so_luong_sach;
 $so_trang = ceil($so_luong_sach/$so_sach_tren_trang);
 ?>
     <script type="text/javascript" src="./js/simple_pagination.js"></script>
     <link rel="stylesheet" href="./css/simple_pagination.css">
+    <script type="text/javascript" src="./js/function_support.js"></script>
     
     <div class="title_page">
         Danh Sách Sách
     </div>
     <?php
-    echo $so_trang;
+    //echo $so_trang;
     ?>
 
     
@@ -88,6 +108,9 @@ $so_trang = ceil($so_luong_sach/$so_sach_tren_trang);
                 <th>Đơn giá</th>
                 <th>Giá bìa</th>
                 <th>Chọn</th>
+                <th>
+                Hành động
+                </th>
             </tr>
         </thead>
         <tbody id="data_show">
@@ -117,6 +140,12 @@ $so_trang = ceil($so_luong_sach/$so_sach_tren_trang);
                 <td>${data_list[i].gia_bia}</td>
                 <td>
                     <input type="checkbox" name="chon_sach[]" value="${data_list[i].gia_bia}">
+                </td>
+                <td>
+                    <a href="/test_php/do_an_nho_nho/admin/?page=sach&id_xoa=${data_list[i].id}" type="button" class="btn btn-danger" onclick="return recheck_delete();">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    Xóa
+                    </a>
                 </td>
             </tr>
             `
