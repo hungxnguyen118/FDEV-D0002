@@ -166,8 +166,11 @@ function check_and_include_model_database(){
     if(file_exists('./model/database.php')){
         include_once('./model/database.php');
     }
-    else{
+    if(file_exists('../model/database.php')){
         include_once('../model/database.php');
+    }
+    else{
+        include_once('../../model/database.php');
     }
 }
 ?>

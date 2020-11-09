@@ -1,0 +1,62 @@
+GET http://localhost:8181/test_php/do_an_nho_nho/api/sach/index.php
+Content-Type: application/json
+
+####
+
+POST http://localhost:8181/test_php/do_an_nho_nho/api/sach/index.php
+Content-Type: application/json
+
+{
+    "ten_sach":"test",
+    "id_tac_gia":1,
+    "gioi_thieu":"<div>nội dung giới thiêu</div>",
+    "doc_thu":"test.html",
+    "id_loai_sach":2,
+    "id_nha_xuat_ban":3,
+    "so_trang":100,
+    "ngay_xuat_ban":"2020-10",
+    "kich_thuoc":"200cm x 200cm",
+    "trong_luong":"200",
+    "sku":"dkngdfkljfdjhgf",
+    "trang_thai":1,
+    "hinh": "test.jpg",
+    "don_gia":69000,
+    "gia_bia": 75000,
+    "noi_bat":0
+}
+
+
+####
+
+PUT http://localhost:8181/test_php/do_an_nho_nho/api/sach/index.php
+Content-Type: application/json
+
+{
+    "ten_sach":"test 123",
+    "id_tac_gia":1,
+    "gioi_thieu":"<div>nội dung giới thiêu</div>",
+    "doc_thu":"test.html",
+    "id_loai_sach":2,
+    "id_nha_xuat_ban":3,
+    "so_trang":100,
+    "ngay_xuat_ban":"2020-10",
+    "kich_thuoc":"200cm x 200cm",
+    "trong_luong":"200",
+    "sku":"dkngdfkljfdjhgf",
+    "trang_thai":1,
+    "hinh": "test.jpg",
+    "don_gia":69000,
+    "gia_bia": 75000,
+    "noi_bat":0,
+    "id_cap_nhat": 93
+}
+
+
+####
+
+DELETE http://localhost:8181/test_php/do_an_nho_nho/api/sach/index.php
+Content-Type: application/json
+
+{
+    "id_xoa": 92
+}
