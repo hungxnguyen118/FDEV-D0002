@@ -1,10 +1,5 @@
 <?php
-if(file_exists('./model/database.php')){
-    include_once('./model/database.php');
-}
-else{
-    include_once('../model/database.php');
-}
+check_and_include_model_database();
 
 
 class xl_nguoi_dung extends database{

@@ -60,3 +60,16 @@ Content-Type: application/json
 {
     "id_xoa": 92
 }
+
+
+
+
+####
+
+POST http://localhost:8181/test_php/do_an_nho_nho/api/auth/index.php
+Content-Type: application/json
+
+{
+    "tai_khoan": "admin",
+    "mat_khau": "123456"
+}
