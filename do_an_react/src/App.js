@@ -1,24 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Component1 from './Module/Component1';
+import TopBanner from './Module/TopBanner/TopBanner';
+import Slider from './Module/Slider/Slider';
+import Content from './Module/Content/Content';
+import Lastest from './Module/Lastest/Lastest';
+import Poster from './Module/Poster/Poster';
+import Xbox from './Module/Xbox/Xbox';
+import Footer from './Module/Footer/Footer';
 
-
-function  test(){
-  alert(123);
-}
 
 function App() {
   let abc = 'Chào các bạn';
   return (
-    <aaaaa onClick={test} style={{
-      color: '#ffc',
-      background: '#000'
-    }}>
-      {abc} haha
+    <>
+      
+      <TopBanner title_page={"Hung " + "Store " + Math.round(Math.random() * 100)} />
 
-      <Component1></Component1>
-    </aaaaa>
+      <Slider />
+
+      <Content />
+      
+      <Lastest />
+      
+      <Poster />
+      
+      <Xbox />
+      
+      <Footer />
+
+    </>
   );
 }
 
