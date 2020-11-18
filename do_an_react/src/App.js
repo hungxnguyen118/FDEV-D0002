@@ -8,14 +8,28 @@ import Lastest from './Module/Lastest/Lastest';
 import Poster from './Module/Poster/Poster';
 import Xbox from './Module/Xbox/Xbox';
 import Footer from './Module/Footer/Footer';
+import { useState } from 'react';
 
 
 function App() {
   let abc = 'Chào các bạn';
+
+  const[load_top_banner, SetLoadTopBanner] = useState(true);
+
+
+  const handleUnMountTopBanner = () => {
+    SetLoadTopBanner(false);
+  }
+
   return (
     <>
       
-      <TopBanner title_page={"Hung " + "Store " + Math.round(Math.random() * 100)} />
+      {
+        (load_top_banner)?
+        <TopBanner title_page={"Hung " + "Store " + Math.round(Math.random() * 100)} delete_me={handleUnMountTopBanner} />
+        :
+        null
+      }
 
       <Slider />
 

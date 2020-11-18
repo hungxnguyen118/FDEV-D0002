@@ -1,16 +1,47 @@
 import LogoBanner from './LogoBanner';
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 class TopBanner extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      title_logo: this.props.title_page + ' test xem sao'
+      title_logo: this.props.title_page + ' test xem sao',
+      count: 1,
+      interval: null
     };
   }
 
+  updateCount(){
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+
+  componentDidMount(){
+    this.setState({
+      interval: setInterval(() => {
+        this.updateCount();
+        //console.log(this.state.title_logo);
+      }, 1000)
+    })
+  }
+
+  componentDidUpdate(){
+    console.log("đang didupdate");
+    if(this.state.count == 3){
+      this.props.delete_me();
+    }
+  }
+
+  componentWillUnmount(){
+    console.log('đang bắt đầu cho component remove');
+    clearInterval(this.state.interval);
+  }
+
   render() {
+    console.log(this.state.count);
     return (
       <div className="top-banner">
         <div className="header">
@@ -51,6 +82,7 @@ class TopBanner extends Component {
               <span className="menu"></span>
               <ul className="nav1">
                 <li className="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">{this.state.count}</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="typo.html">News</a></li>

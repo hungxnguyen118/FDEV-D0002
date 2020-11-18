@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Xbox = () => {
+
+    const [an_hien_hinh, setAnHienHinh] = useState(true);
+
+    const handleClick = (e) => {
+        console.log('đã click vào ReadMore Xbox Component');
+        console.log(e);
+
+        setAnHienHinh(false);
+    }
+
     return (
         <div className="x-box">
             <div className="container">
@@ -12,11 +22,17 @@ const Xbox = () => {
                     euismod, varius nisl eu, pharetra lacus. Sed vehicula tempor leo. Aenean dictum suscipit magna
                     vel tempus.
                     Aliquam nec dui dolor. Quisque scelerisque aliquet est et dignissim.</p>
-                <a className="hvr-bounce-to-top" href="reviews.html">Read More</a>
+                <a className="hvr-bounce-to-top" onClick={handleClick}>Read More</a>
                 </div>
-                <div className="col-md-5 x-box-right">
-                <img src="images/xbox.jpg" className="img-responsive" alt="" />
-                </div>
+                {
+                    (an_hien_hinh)?
+                    <div className="col-md-5 x-box-right">
+                        <img src="images/xbox.jpg" className="img-responsive" alt="" />
+                    </div>
+                    :
+                    <></>
+                }
+                
                 <div className="clearfix"></div>
             </div>
             </div>
