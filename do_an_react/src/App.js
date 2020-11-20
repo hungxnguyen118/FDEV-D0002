@@ -8,6 +8,7 @@ import Lastest from './Module/Lastest/Lastest';
 import Poster from './Module/Poster/Poster';
 import Xbox from './Module/Xbox/Xbox';
 import Footer from './Module/Footer/Footer';
+import Contact from './Module/Contact/Contact';
 import { useState } from 'react';
 
 
@@ -40,8 +41,12 @@ function App() {
       <Poster />
       
       <Xbox />
+
+      <Contact />
       
       <Footer />
+
+      
 
     </>
   );

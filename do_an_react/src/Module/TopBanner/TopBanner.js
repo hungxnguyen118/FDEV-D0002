@@ -9,8 +9,12 @@ class TopBanner extends Component {
     this.state = {
       title_logo: this.props.title_page + ' test xem sao',
       count: 1,
-      interval: null
+      interval: null,
+      search: ''
     };
+
+    this.handleChangeInput = this.handleChangeInput.bind(this);
+    this.handleSearchfunction = this.handleSearchfunction.bind(this);
   }
 
   updateCount(){
@@ -20,19 +24,19 @@ class TopBanner extends Component {
   }
 
   componentDidMount(){
-    this.setState({
-      interval: setInterval(() => {
-        this.updateCount();
-        //console.log(this.state.title_logo);
-      }, 1000)
-    })
+    // this.setState({
+    //   interval: setInterval(() => {
+    //     this.updateCount();
+    //     //console.log(this.state.title_logo);
+    //   }, 1000)
+    // })
   }
 
   componentDidUpdate(){
-    console.log("đang didupdate");
-    if(this.state.count == 3){
-      this.props.delete_me();
-    }
+    // console.log("đang didupdate");
+    // if(this.state.count == 3){
+    //   this.props.delete_me();
+    // }
   }
 
   componentWillUnmount(){
@@ -40,8 +44,20 @@ class TopBanner extends Component {
     clearInterval(this.state.interval);
   }
 
+  handleChangeInput = (e) => {
+      //console.log(e.target.value);
+
+      this.setState({
+        search: e.target.value
+      })
+  }
+
+  handleSearchfunction = () => {
+    console.log(this.state.search);
+  }
+
   render() {
-    console.log(this.state.count);
+    //console.log(this.state.count);
     return (
       <div className="top-banner">
         <div className="header">
@@ -56,8 +72,8 @@ class TopBanner extends Component {
               </div>
               <div className="search">
                 <form>
-                  <input type="button" class="button_submit"  />
-                  <input type="text" defaultValue="" placeholder="Search..." />
+                  <input type="button" class="button_submit" onClick={this.handleSearchfunction}  />
+                  <input type="text" value={this.state.search} onChange={this.handleChangeInput} defaultValue="" placeholder="Search..." />
                 </form>
               </div>
               <div className="clearfix"></div>
