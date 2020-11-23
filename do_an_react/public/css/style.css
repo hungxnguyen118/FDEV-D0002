@@ -13,6 +13,10 @@ html, body{
 	font-size: 100%;
 	background: #ffffff;
 }
+div.error {
+  color: #f00;
+  
+}
 @font-face {
    font-family: 'OpenSans-Regular';
    src: url(../fonts/OpenSans-Regular.ttf)format('truetype');
