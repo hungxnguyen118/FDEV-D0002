@@ -2,6 +2,8 @@ import LogoBanner from './LogoBanner';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import $ from 'jquery';
+
 class TopBanner extends Component {
 
   constructor(props){
@@ -10,11 +12,21 @@ class TopBanner extends Component {
       title_logo: this.props.title_page + ' test xem sao',
       count: 1,
       interval: null,
-      search: ''
+      search: '',
+      thong_tin_user: {
+        name: '',
+        tai_khoan: '',
+        mat_khau: ''
+      },
+      message_error: {
+        general_error: ''
+      }
     };
 
     this.handleChangeInput = this.handleChangeInput.bind(this);
     this.handleSearchfunction = this.handleSearchfunction.bind(this);
+    this.handleChangeInputLoginForm = this.handleChangeInputLoginForm.bind(this);
+    this.handleSubmitLoginForm = this.handleSubmitLoginForm.bind(this);
   }
 
   updateCount(){
@@ -54,6 +66,45 @@ class TopBanner extends Component {
 
   handleSearchfunction = () => {
     console.log(this.state.search);
+  }
+
+
+  handleChangeInputLoginForm = (e) => {
+    var thong_tin_user_temp = {...this.state.thong_tin_user};
+
+    thong_tin_user_temp[e.target.name] = e.target.value;
+
+    this.setState({
+      thong_tin_user: thong_tin_user_temp
+    }, () => {
+      //console.log(this.state);
+    })
+  }
+
+  handleSubmitLoginForm = (e) => {
+    e.preventDefault();
+
+    if(this.state.thong_tin_user.tai_khoan == 'hungnguyen' && this.state.thong_tin_user.mat_khau == '123456'){
+      console.log('Đăng nhập thành công');
+      var thong_tin_user_temp = {...this.state.thong_tin_user};
+
+      thong_tin_user_temp.name = 'Hùng Nguyễn';
+
+      this.setState({
+        thong_tin_user: thong_tin_user_temp
+      }, () => {
+        console.log(this.state);
+        $('#modal-id').hide();
+        $('.modal-backdrop').hide();
+      });
+    }
+    else{
+      this.setState({
+        message_error: {
+          general_error: 'Tài khoản hoặc Mật khẩu không chính xác'
+        }
+      })
+    }
   }
 
   render() {
@@ -104,12 +155,54 @@ class TopBanner extends Component {
                 <li><a href="typo.html">News</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Mail</a></li>
+                {
+                  (this.state.thong_tin_user.name != '')?
+                  <li><a href="">{this.state.thong_tin_user.name}</a></li>
+                  :
+                  <li><a href="" class="btn btn-primary" data-toggle="modal" href='#modal-id'>Đăng nhập</a></li>
+                }
               </ul>
             </div>
 
             <div className="clearfix"></div>
           </div>
         </div>
+
+        
+        <div className="modal fade" id="modal-id">
+
+          <form className="login_form" action="" method="POST" onSubmit={this.handleSubmitLoginForm}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 className="modal-title">Đăng Nhập</h4>
+                </div>
+                <div className="modal-body">
+                  <div className="error">
+                    {this.state.message_error.general_error}
+                  </div>
+                  <div>
+                    <input type="text" onChange={this.handleChangeInputLoginForm} placeholder="Tài Khoản" 
+                    name="tai_khoan" id="tai_khoan" className="form-control" defaultValue="" 
+                    value={this.state.thong_tin_user.tai_khoan} />
+                  </div>
+                  <div>
+                    <input type="password" onChange={this.handleChangeInputLoginForm} placeholder="Mật khẩu" 
+                    name="mat_khau" id="mat_khau" className="form-control" defaultValue="" 
+                    value={this.state.thong_tin_user.mat_khau} />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" className="btn btn-primary">Login</button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        
       </div>
     );
   }

@@ -132,6 +132,9 @@ background-position:-180px -9px;
 .contact_form input::placeholder, .contact_form textarea::placeholder {
   color: #555!important;
 }
+.login_form input::placeholder, .login_form textarea::placeholder {
+  color: #555!important;
+}
 .headr-right {
   float: left;
 }
