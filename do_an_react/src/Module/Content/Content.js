@@ -1,6 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProductList from '../Product/ProductList';
 
 const Content = () => {
+
+    const [list_item, SetListItem] = useState([
+      {
+        'type': "Action Games",
+        'title': "Nulla elementum nunc tempus.",
+        'image': "images/t1.jpg"
+      },
+      {
+        'type': "Racing Games",
+        'title': "Nulla elementum nunc tempus.",
+        'image': "images/t3.jpg"
+      },
+      {
+        'type': "3D Games",
+        'title': "Nulla elementum nunc tempus.",
+        'image': "images/t4.jpg"
+      },
+      {
+        'type': "Arcade Games",
+        'title': "Nulla elementum nunc tempus.",
+        'image': "images/t2.jpg"
+      }
+    ]);
+
     return (
         <div className="content">
         <div className="container">
@@ -9,37 +34,8 @@ const Content = () => {
             <span></span>
           </div>
           <div className="top-game-grids">
-            <ul id="flexiselDemo1">
-              <li>
-                <div className="game-grid">
-                  <h4>Action Games</h4>
-                  <p>Nulla elementum nunc tempus.</p>
-                  <img src="images/t1.jpg" className="img-responsive" alt="" />
-                </div>
-              </li>
-              <li>
-                <div className="game-grid">
-                  <h4>Racing Games</h4>
-                  <p>Nulla elementum nunc tempus.</p>
-                  <img src="images/t3.jpg" className="img-responsive" alt="" />
-                </div>
-              </li>
-              <li>
-                <div className="game-grid">
-                  <h4>3D Games</h4>
-                  <p>Nulla elementum nunc tempus.</p>
-                  <img src="images/t4.jpg" className="img-responsive" alt="" />
-                </div>
-              </li>
-              <li>
-                <div className="game-grid">
-                  <h4>Arcade Games</h4>
-                  <p>Nulla elementum nunc tempus.</p>
-                  <img src="images/t2.jpg" className="img-responsive" alt="" />
-                </div>
-              </li>
-            </ul>
-
+            
+            <ProductList list_item={list_item} />
             
           </div>
         </div>

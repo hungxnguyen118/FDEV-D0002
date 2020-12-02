@@ -20,7 +20,33 @@ class TopBanner extends Component {
       },
       message_error: {
         general_error: ''
-      }
+      },
+      menu_list: [
+        {
+          title: 'Home',
+          link: '/'
+        },
+        {
+          title: 'About',
+          link: '/about'
+        },
+        {
+          title: 'Reviews',
+          link: '/reviews'
+        },
+        {
+          title: 'New',
+          link: '/new'
+        },
+        {
+          title: 'Gallery',
+          link: '/gallery'
+        },
+        {
+          title: 'Contact',
+          link: '/contact'
+        },
+      ]
     };
 
     this.handleChangeInput = this.handleChangeInput.bind(this);
@@ -36,6 +62,24 @@ class TopBanner extends Component {
   }
 
   componentDidMount(){
+
+    var thong_tin_user_save = localStorage.getItem('thong_tin_user');
+
+    //console.log(JSON.parse(thong_tin_user_save));
+
+    if(typeof thong_tin_user_save != 'undefined' && thong_tin_user_save != null){
+      thong_tin_user_save = JSON.parse(thong_tin_user_save);
+
+      if(thong_tin_user_save.tai_khoan){
+        this.setState({
+          thong_tin_user: thong_tin_user_save
+        }, () => {
+          console.log(this.state.thong_tin_user);
+        })
+      }
+
+    }
+
     // this.setState({
     //   interval: setInterval(() => {
     //     this.updateCount();
@@ -93,9 +137,16 @@ class TopBanner extends Component {
       this.setState({
         thong_tin_user: thong_tin_user_temp
       }, () => {
+
         console.log(this.state);
+
+        thong_tin_user_temp.mat_khau = '';
+
+        localStorage.setItem('thong_tin_user', JSON.stringify(thong_tin_user_temp));
+
         $('#modal-id').hide();
         $('.modal-backdrop').hide();
+        $('body').removeClass('modal-open');
       });
     }
     else{
@@ -148,13 +199,31 @@ class TopBanner extends Component {
             <div className="top-menu">
               <span className="menu"></span>
               <ul className="nav1">
-                <li className="active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">{this.state.count}</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="typo.html">News</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Mail</a></li>
+                {
+                  this.state.menu_list.map((item_menu, index) => 
+                    {
+
+                      // var class_active = '';
+
+                      // if(index == 0){
+                      //   class_active = 'active';
+                      // }
+
+                      // return <li className={class_active}><a href={item_menu.link}>{item_menu.title}</a></li>
+
+
+                      if(index == 0){
+                        return <li key={index} className="active"><a href={item_menu.link}>{item_menu.title}</a></li>
+                      }
+                      else{
+                        return <li key={index} className=""><a href={item_menu.link}>{item_menu.title}</a></li>
+                      }
+
+                      
+
+                    }
+                  )
+                }
                 {
                   (this.state.thong_tin_user.name != '')?
                   <li><a href="">{this.state.thong_tin_user.name}</a></li>
