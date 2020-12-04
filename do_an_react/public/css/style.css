@@ -17,6 +17,9 @@ div.error {
   color: #f00;
   
 }
+.carousel-inner img {
+  width: 100%;
+}
 @font-face {
    font-family: 'OpenSans-Regular';
    src: url(../fonts/OpenSans-Regular.ttf)format('truetype');
