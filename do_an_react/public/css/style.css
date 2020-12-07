@@ -17,8 +17,23 @@ div.error {
   color: #f00;
   
 }
+#carousel-id {
+  max-height: 500px;
+  overflow: hidden;
+}
 .carousel-inner img {
   width: 100%;
+}
+.button_gio_hang {
+  top: 10px;
+  position: fixed;
+  right: 0;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0px 5px 10px #000;
+  cursor: pointer;
+  background: #fff;
 }
 @font-face {
    font-family: 'OpenSans-Regular';

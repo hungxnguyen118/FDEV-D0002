@@ -2,14 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 
 import TopBanner from './Module/TopBanner/TopBanner';
-import Slider from './Module/Slider/Slider';
-import Content from './Module/Content/Content';
-import Lastest from './Module/Lastest/Lastest';
-import Poster from './Module/Poster/Poster';
-import PosterDetail from './Module/Poster/PosterDetail';
-import Xbox from './Module/Xbox/Xbox';
+
+import TrangChu from './Pages/TrangChu';
+import TrangChiTietSanPham from './Pages/TrangChiTietSanPham';
+import TrangLienHe from './Pages/TrangLienHe';
+import TrangGioHang from './Pages/TrangGioHang';
+
 import Footer from './Module/Footer/Footer';
-import Contact from './Module/Contact/Contact';
+
+import ButtonGoToGioHang from './Module/ButtonGoToGioHang';
+
 import { useState } from 'react';
 import {
   Link,
@@ -45,32 +47,24 @@ function App() {
         <Switch>
 
           <Route path='/chi-tiet/:id_san_pham'>
-            <PosterDetail />
+            <TrangChiTietSanPham />
           </Route>
-
-          <Route path='/chi-tiet'>
-            <Poster />
-              
-            <Xbox />
-          </Route>
-
-          
 
           <Route path='/lien-he'>
-            <Contact />
+            <TrangLienHe />
+          </Route>
+
+          <Route path='/gio-hang'>
+            <TrangGioHang />
           </Route>
 
           <Route path='/'>
-            <Slider />
-
-            <Content />
-
-            <Lastest />
+            <TrangChu />
           </Route>
         </Switch>
 
       
-      
+      <ButtonGoToGioHang />
       <Footer />
 
       </Router>
