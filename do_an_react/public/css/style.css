@@ -17,6 +17,16 @@ div.error {
   color: #f00;
   
 }
+.include_table_gio_hang {
+  padding: 40px 0;
+}
+.number_input {
+  max-width: 80px;
+  text-align: center;
+}
+.include_action_gio_hang {
+  display: flex;
+}
 #carousel-id {
   max-height: 500px;
   overflow: hidden;
