@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Box from '@material-ui/core/Box';
 
 const Xbox = (props) => {
 
@@ -57,7 +58,7 @@ const Xbox = (props) => {
     }
 
     return (
-        <div className="x-box">
+        <Box className="x-box">
             <div className="container">
             <div className="x-box_sec">
                 <div className="col-md-7 x-box-left">
@@ -82,7 +83,7 @@ const Xbox = (props) => {
                 <div className="clearfix"></div>
             </div>
             </div>
-        </div>
+        </Box>
     );
 };
 

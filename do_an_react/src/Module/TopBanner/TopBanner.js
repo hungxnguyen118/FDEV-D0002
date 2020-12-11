@@ -2,6 +2,11 @@ import LogoBanner from './LogoBanner';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import {Button} from '@material-ui/core';
+import PersonIcon from '@material-ui/icons/Person';
+import CloseIcon from '@material-ui/icons/Close';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+
 import {
   Link,
   withRouter
@@ -231,7 +236,14 @@ class TopBanner extends Component {
                   (this.state.thong_tin_user.name != '')?
                   <li><a href="">{this.state.thong_tin_user.name}</a></li>
                   :
-                  <li><a href="" class="btn btn-primary" data-toggle="modal" href='#modal-id'>Đăng nhập</a></li>
+                  <li>
+                    {/* <a href="" class="btn btn-primary" data-toggle="modal" href='#modal-id'>Đăng nhập</a> */}
+                    <a href="" data-toggle="modal" href='#modal-id'>
+                      <Button variant="contained" color="primary">
+                        <PersonIcon />Đăng nhập
+                      </Button>
+                    </a>
+                  </li>
                 }
               </ul>
             </div>
@@ -266,8 +278,14 @@ class TopBanner extends Component {
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" className="btn btn-primary">Login</button>
+                  <Button variant="contained" color="default" data-dismiss="modal">
+                    <CloseIcon /> Close
+                  </Button>
+                  <Button variant="contained" color="primary" onClick={this.handleSubmitLoginForm}>
+                    <VpnKeyIcon /> Login
+                  </Button>
+                  {/* <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" className="btn btn-primary">Login</button> */}
                 </div>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Poster from '../Module/Poster/Poster';
 import Xbox from '../Module/Xbox/Xbox';
+import { Container, Grid } from '@material-ui/core';
 
 import { withRouter } from "react-router";
 
@@ -64,6 +65,17 @@ class TrangChiTietSanPham extends Component {
                <Poster />
               
                 <Xbox item_current={this.state.item_current} />
+
+                <Container>
+                    <Grid container>
+                        <Grid item xs={6}>
+                        left
+                        </Grid>
+                        <Grid item xs={6}>
+                        right
+                        </Grid>
+                    </Grid>
+                </Container>
             </>
         );
     }

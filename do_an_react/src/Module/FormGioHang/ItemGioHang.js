@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import {Button, ButtonGroup} from '@material-ui/core';
+
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 
 class ItemGioHang extends Component {
     constructor(props){
         super(props);
 
+        this.state = {
+            is_edit: false
+        };
+
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleButtonRemoveItemCart = this.handleButtonRemoveItemCart.bind(this);
+        this.handleAllowEditOrNot = this.handleAllowEditOrNot.bind(this);
     }
 
     handleButtonClick(string_loai){
@@ -35,6 +44,12 @@ class ItemGioHang extends Component {
         }
     }
 
+    handleAllowEditOrNot(){
+        this.setState({
+            is_edit: !this.state.is_edit
+        });
+    }
+
     render() {
         return (
             <>
@@ -45,15 +60,20 @@ class ItemGioHang extends Component {
                     <td>{this.props.info_item.title + this.props.info_item.type}</td>
                     <td className="include_action_gio_hang">
                         <button type="button" class="btn btn-default" onClick={()=>{this.handleButtonClick('-')}}>-</button>
-                        <input type="number" name="" readOnly="true" className="form-control number_input" value={this.props.info_item.so_luong} />
+                        <input type="number" name="" readOnly={!this.state.is_edit} className="form-control number_input" value={this.props.info_item.so_luong} />
                         <button type="button" class="btn btn-default" onClick={()=>{this.handleButtonClick('+')}}>+</button>
                     </td>
                     <td>{this.props.info_item.price}</td>
                     <td>{this.props.info_item.price * this.props.info_item.so_luong}</td>
                     <td>
-                        <button type="button" class="btn btn-danger" onClick={this.handleButtonRemoveItemCart}>
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </button>
+                        <ButtonGroup aria-label="contained primary button group">
+                            <Button variant="contained" style={{background: '#009900'}} size="small" color="primary" onClick={this.handleAllowEditOrNot}>
+                                <EditOutlinedIcon />
+                            </Button>
+                            <Button variant="contained" size="small" color="secondary" onClick={this.handleButtonRemoveItemCart}>
+                                <DeleteIcon/>
+                            </Button>
+                        </ButtonGroup>
                     </td>
                 </tr>
                 :
