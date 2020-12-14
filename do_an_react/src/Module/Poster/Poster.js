@@ -1,6 +1,19 @@
 import React from 'react';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: {
+        position: "fixed",
+        bottom: '20px',
+        left: '20px'
+    }
+  });
 
 const Poster = () => {
+    const classes = useStyles();
+
     return (
         <div className="poster">
             <div className="container">
@@ -13,6 +26,14 @@ const Poster = () => {
                 <a className="hvr-bounce-to-bottom" href="reviews.html">Read More</a>
             </div>
             </div>
+            <Fab 
+            classes={{
+                root: classes.root
+            }}
+            className="animation_button_mua_ngay"
+            variant="extended" color="primary" aria-label="add">
+                <AddIcon /> Mua Ngay
+            </Fab>
         </div>
     );
 };

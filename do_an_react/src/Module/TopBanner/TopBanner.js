@@ -2,10 +2,22 @@ import LogoBanner from './LogoBanner';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import {Button} from '@material-ui/core';
+import {Button, Checkbox} from '@material-ui/core';
 import PersonIcon from '@material-ui/icons/Person';
 import CloseIcon from '@material-ui/icons/Close';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+
+import GreenCheckbox from '../../Themes/CustomInput/CheckBoxLike';
+
+// import 'date-fns';
+// import DateFnsUtils from '@date-io/date-fns';
+// import {
+//   KeyboardDatePicker,
+//   MuiPickersUtilsProvider
+// } from '@material-ui/pickers';
+
+
 
 import {
   Link,
@@ -15,6 +27,9 @@ import {
 import ItemMenu from './ItemMenu';
 
 import $ from 'jquery';
+
+
+
 
 class TopBanner extends Component {
 
@@ -29,6 +44,13 @@ class TopBanner extends Component {
         name: '',
         tai_khoan: '',
         mat_khau: ''
+      },
+      thong_tin_user_sign_up: {
+        name: '',
+        tai_khoan: '',
+        mat_khau: '',
+        nhap_lai_mat_khau: '',
+        ngay_sinh: new Date('2014-08-18T21:11:54')
       },
       message_error: {
         general_error: ''
@@ -120,6 +142,27 @@ class TopBanner extends Component {
     console.log(this.state.search);
   }
 
+  handleChangeInputSignUpForm = (e) => {
+    var thong_tin_user_temp = {...this.state.thong_tin_user_sign_up};
+
+    thong_tin_user_temp[e.target.name] = e.target.value;
+
+    this.setState({
+      thong_tin_user_sign_up: thong_tin_user_temp
+    }, () => {
+      //console.log(this.state);
+    })
+  }
+
+  handleDateChange = (date) => {
+    console.log(date);
+  }
+
+  handleSubmitSignUpForm = (e) => {
+    e.preventDefault();
+
+    console.log('sign up successfull');
+  }
 
   handleChangeInputLoginForm = (e) => {
     var thong_tin_user_temp = {...this.state.thong_tin_user};
@@ -243,6 +286,12 @@ class TopBanner extends Component {
                         <PersonIcon />Đăng nhập
                       </Button>
                     </a>
+
+                    <a href="" data-toggle="modal" href='#modal-form-dang-ky'>
+                      <Button variant="contained" color="primary">
+                        <PersonIcon />Đăng ký
+                      </Button>
+                    </a>
                   </li>
                 }
               </ul>
@@ -250,6 +299,74 @@ class TopBanner extends Component {
 
             <div className="clearfix"></div>
           </div>
+        </div>
+
+
+        <div className="modal fade" id="modal-form-dang-ky">
+
+          <form className="sign_up_form" action="" method="POST" onSubmit={this.handleSubmitSignUpForm}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 className="modal-title">Đăng ký</h4>
+                </div>
+                <div className="modal-body">
+                  <div className="error">
+                    {this.state.message_error.general_error}
+                  </div>
+                  <div>
+                    <input type="text" onChange={this.handleChangeInputSignUpForm} placeholder="Tài Khoản" 
+                    name="name" id="name" className="form-control" defaultValue="" 
+                    value={this.state.thong_tin_user_sign_up.name} />
+                  </div>
+                  <div>
+                    <input type="text" onChange={this.handleChangeInputSignUpForm} placeholder="Tài Khoản" 
+                    name="tai_khoan" id="tai_khoan" className="form-control" defaultValue="" 
+                    value={this.state.thong_tin_user_sign_up.tai_khoan} />
+                  </div>
+                  <div>
+                    <input type="password" onChange={this.handleChangeInputSignUpForm} placeholder="Mật khẩu" 
+                    name="mat_khau" id="mat_khau" className="form-control" defaultValue="" 
+                    value={this.state.thong_tin_user_sign_up.mat_khau} />
+                  </div>
+                  <div>
+                    <input type="password" onChange={this.handleChangeInputSignUpForm} placeholder="Mật khẩu" 
+                    name="nhap_lai_mat_khau" id="nhap_lai_mat_khau" className="form-control" defaultValue="" 
+                    value={this.state.thong_tin_user_sign_up.mat_khau} />
+                  </div>
+                  <div>
+                  {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <KeyboardDatePicker
+                      disableToolbar
+                      variant="inline"
+                      format="MM/dd/yyyy"
+                      margin="normal"
+                      id="date-picker-inline"
+                      label="Date picker inline"
+                      value={'2017-05-24'}
+                      onChange={this.handleDateChange}
+                      KeyboardButtonProps={{
+                        'aria-label': 'change date',
+                      }}
+                    />
+                  </MuiPickersUtilsProvider> */}
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <Button variant="contained" color="default" data-dismiss="modal">
+                    <CloseIcon /> Close
+                  </Button>
+                  <Button variant="contained" color="primary" onClick={this.handleSubmitLoginForm}>
+                    <VpnKeyIcon /> Sign Up
+                  </Button>
+                  {/* <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" className="btn btn-primary">Login</button> */}
+                </div>
+              </div>
+            </div>
+          </form>
+
         </div>
 
         
@@ -275,6 +392,10 @@ class TopBanner extends Component {
                     <input type="password" onChange={this.handleChangeInputLoginForm} placeholder="Mật khẩu" 
                     name="mat_khau" id="mat_khau" className="form-control" defaultValue="" 
                     value={this.state.thong_tin_user.mat_khau} />
+                  </div>
+                  <div>
+                    {/* <Checkbox color="primary" /> */}
+                    <GreenCheckbox icon={<ThumbUpAltIcon />} checkedIcon={<ThumbUpAltIcon />} />
                   </div>
                 </div>
                 <div class="modal-footer">

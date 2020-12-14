@@ -15,7 +15,29 @@ html, body{
 }
 div.error {
   color: #f00;
-  
+}
+.animation_button_mua_ngay {
+  animation: hieu_ung_vy ease 0.6s infinite;
+}
+@keyframes hieu_ung_vy {
+  0%{
+    background: #3f51b5;
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(20deg);
+  }
+  50%{
+    background: #f43c60;
+    transform: rotate(0deg);
+  }
+  75%{
+    transform: rotate(-20deg);
+  }
+  100%{
+    background: #3f51b5;
+    transform: rotate(0deg);
+  }
 }
 .include_table_gio_hang {
   padding: 40px 0;
