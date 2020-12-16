@@ -10,12 +10,12 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 
 import GreenCheckbox from '../../Themes/CustomInput/CheckBoxLike';
 
-// import 'date-fns';
-// import DateFnsUtils from '@date-io/date-fns';
-// import {
-//   KeyboardDatePicker,
-//   MuiPickersUtilsProvider
-// } from '@material-ui/pickers';
+import 'date-fns';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  KeyboardDatePicker,
+  MuiPickersUtilsProvider
+} from '@material-ui/pickers';
 
 
 
@@ -336,7 +336,7 @@ class TopBanner extends Component {
                     value={this.state.thong_tin_user_sign_up.mat_khau} />
                   </div>
                   <div>
-                  {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                  <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <KeyboardDatePicker
                       disableToolbar
                       variant="inline"
@@ -350,7 +350,7 @@ class TopBanner extends Component {
                         'aria-label': 'change date',
                       }}
                     />
-                  </MuiPickersUtilsProvider> */}
+                  </MuiPickersUtilsProvider>
                   </div>
                 </div>
                 <div class="modal-footer">
