@@ -19,6 +19,7 @@ import {
   BrowserRouter as Router,
   Switch
 } from 'react-router-dom';
+import TrangTestMaterialUI from './Pages/TrangTestMaterialUI';
 
 
 function App() {
@@ -56,6 +57,10 @@ function App() {
 
           <Route path='/gio-hang'>
             <TrangGioHang />
+          </Route>
+
+          <Route path='/test-material-ui'>
+            <TrangTestMaterialUI />
           </Route>
 
           <Route path='/'>

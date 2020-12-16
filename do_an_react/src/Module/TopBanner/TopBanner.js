@@ -2,11 +2,14 @@ import LogoBanner from './LogoBanner';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import {Button, Checkbox} from '@material-ui/core';
+import {Button, Checkbox, Typography, Grid, Slider } from '@material-ui/core';
 import PersonIcon from '@material-ui/icons/Person';
 import CloseIcon from '@material-ui/icons/Close';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import VolumeDown from '@material-ui/icons/VolumeDown';
+import VolumeUp from '@material-ui/icons/VolumeUp';
+ 
 
 import GreenCheckbox from '../../Themes/CustomInput/CheckBoxLike';
 
@@ -72,13 +75,15 @@ class TopBanner extends Component {
           title: 'Liên hệ',
           link: '/lien-he'
         }
-      ]
+      ],
+      value_volume: 30
     };
 
     this.handleChangeInput = this.handleChangeInput.bind(this);
     this.handleSearchfunction = this.handleSearchfunction.bind(this);
     this.handleChangeInputLoginForm = this.handleChangeInputLoginForm.bind(this);
     this.handleSubmitLoginForm = this.handleSubmitLoginForm.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   updateCount(){
@@ -86,6 +91,12 @@ class TopBanner extends Component {
       count: this.state.count + 1
     });
   }
+
+  handleChange(event, newValue){
+    this.setState({
+      value_volume: newValue
+    })
+  };
 
   componentDidMount(){
 
@@ -335,6 +346,29 @@ class TopBanner extends Component {
                     name="nhap_lai_mat_khau" id="nhap_lai_mat_khau" className="form-control" defaultValue="" 
                     value={this.state.thong_tin_user_sign_up.mat_khau} />
                   </div>
+                  <div>
+                    <input type="range"  />
+                  </div>
+                  <Typography id="continuous-slider" gutterBottom>
+                    Volume
+                  </Typography>
+                  <Grid container spacing={2}>
+                    <Grid item>
+                      <VolumeDown />
+                    </Grid>
+                    <Grid item xs>
+                      <Slider value={this.state.value_volume} 
+                      onChange={this.handleChange} 
+                      aria-labelledby="continuous-slider"
+                      step={10}
+                      marks
+                      min={10}
+                      max={110} />
+                    </Grid>
+                    <Grid item>
+                      <VolumeUp />
+                    </Grid>
+                  </Grid>
                   <div>
                   <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <KeyboardDatePicker
