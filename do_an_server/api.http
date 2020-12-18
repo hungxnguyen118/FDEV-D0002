@@ -1,0 +1,41 @@
+###
+GET http://localhost:4000/
+
+####
+POST http://localhost:4000/
+Content-Type: application/json
+
+{
+    "bien": "gia tri"
+}
+
+###
+GET http://localhost:4000/users
+
+###
+GET http://localhost:4000/users?s=hung
+
+###
+POST http://localhost:4000/users
+
+###
+PUT http://localhost:4000/users
+
+###
+DELETE http://localhost:4000/users
+
+
+
+###
+GET http://localhost:4000/user/15
+
+###
+POST http://localhost:4000/user
+Content-Type: application/json
+
+{
+    "name": "Hùng Nguyễn",
+    "tai_khoan": "hungnguyen",
+    "mat_khau": "123456789",
+    "email": "hungnguyenxuan118@gmail.com"
+}
