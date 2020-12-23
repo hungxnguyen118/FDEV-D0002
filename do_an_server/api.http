@@ -32,6 +32,21 @@ GET http://localhost:4000/user/15
 ###
 POST http://localhost:4000/user
 Content-Type: application/json
+Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=
+
+{
+    "name": "Hùng Nguyễn",
+    "tai_khoan": "hungnguyen",
+    "mat_khau": "123456789",
+    "email": "hungnguyenxuan118@gmail.com"
+}
+
+
+
+###
+POST http://localhost:4000/userdfdsfd
+Content-Type: application/json
+Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=
 
 {
     "name": "Hùng Nguyễn",
