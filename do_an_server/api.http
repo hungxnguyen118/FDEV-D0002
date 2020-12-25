@@ -27,7 +27,10 @@ DELETE http://localhost:4000/users
 
 
 ###
-GET http://localhost:4000/user/15
+GET http://localhost:4000/user/
+
+###
+GET http://localhost:4000/user/hungnguyenxuan118@gmail.com
 
 ###
 POST http://localhost:4000/user

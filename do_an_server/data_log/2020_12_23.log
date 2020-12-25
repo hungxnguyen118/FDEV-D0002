@@ -1,0 +1,18 @@
+1608903872252-GET-/user/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608903898499-GET-/user/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608903951146-GET-/user/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608903962865-GET-/user/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608905071483-GET-/user/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608905131717-GET-/users?s=hung
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608905157490-GET-/users
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608905287659-GET-/user/hungnguyenxuan118@gmail.com
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1608905324969-GET-/user/hungnguyenxuan118@gmail.com
+-200-{"xu_ly":"thêm user mới","data_send":{}}

@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
+const MongoClient = require('mongodb').MongoClient;
+
+// Connection URL
+const url = 'mongodb://localhost:27017';
+
+const dbName = 'database_chat';
+
 var authenticate = (req, res, next) => {
     var authorization = req.header('Authorization');
     var array_auth = authorization.split(' ');
@@ -25,11 +32,43 @@ var authenticate = (req, res, next) => {
 }
 
 router.get('/', (req, res) => {
-    res.json({'xu_ly': 'thông tin user'});
+    MongoClient.connect(url, function(err, client) {
+        if(err)
+            console.log(err);
+
+        const db = client.db(dbName);
+
+        const collection_user = db.collection('users');
+
+        collection_user.find({}).toArray(function(err, ds_user) {
+            if(err)
+                console.log(err);
+
+            //console.log(ds_user);
+
+            res.json({'xu_ly': 'thông tin user', 'data': ds_user});
+            
+            client.close();
+        });
+    });
 });
 
 router.get('/:id_user', (req, res) => {
-    res.json({'xu_ly': 'thông tin user ' + req.params.id_user});
+
+    MongoClient.connect(url, function(err, client) {
+        if(err)
+            console.log(err);
+        const db = client.db(dbName);
+        const collection_user = db.collection('users');
+        collection_user.findOne({'email': req.params.id_user},function(err, info_user) {
+            if(err)
+                console.log(err);
+            //console.log(ds_user);
+            res.json({'xu_ly': 'thông tin user', 'data': info_user});
+            client.close();
+        });
+    });
+    //res.json({'xu_ly': 'thông tin user ' + req.params.id_user});
 });
 
 router.post('/', authenticate, (req, res) => {
