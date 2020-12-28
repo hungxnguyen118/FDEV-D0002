@@ -47,13 +47,57 @@ Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=
 
 
 ###
-POST http://localhost:4000/userdfdsfd
+POST http://localhost:4000/user/sign-up
+Content-Type: application/json
+
+{
+    "name": "Hùng Nguyễn",
+    "username": "hungnguyen",
+    "password": "123456789",
+    "email": "hungnguyenxuan118@gmail.com"
+}
+
+
+###
+POST http://localhost:4000/users
 Content-Type: application/json
 Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=
+
+[
+    {
+        "name": "Hùng Nguyễn",
+        "tai_khoan": "hungnguyen",
+        "mat_khau": "123456789",
+        "email": "hungnguyenxuan118@gmail.com"
+    },
+    {
+        "name": "Hùng Nguyễn 1",
+        "tai_khoan": "hungnguyen",
+        "mat_khau": "123456789",
+        "email": "hungnguyenxuan1@gmail.com"
+    },
+    {
+        "name": "Hùng Nguyễn 2",
+        "tai_khoan": "hungnguyen",
+        "mat_khau": "123456789",
+        "email": "hungnguyenxuan2@gmail.com"
+    }
+]
+
+
+###
+PUT http://localhost:4000/user/hungnguyenxuan2@gmail.com
+Content-Type: application/json
 
 {
     "name": "Hùng Nguyễn",
     "tai_khoan": "hungnguyen",
     "mat_khau": "123456789",
-    "email": "hungnguyenxuan118@gmail.com"
+    "email": "hungnguyenxuan3@gmail.com"
 }
+
+
+###
+DELETE http://localhost:4000/user/hungnguyenxuan3@gmail.com
+Content-Type: application/json
+Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=

@@ -16,3 +16,55 @@
 -200-{"xu_ly":"thêm user mới","data_send":{}}
 1608905324969-GET-/user/hungnguyenxuan118@gmail.com
 -200-{"xu_ly":"thêm user mới","data_send":{}}
+1609157283851-POST-/sign-up
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","username":"hungnguyen","password":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609157293878-POST-/user/sign-up
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","username":"hungnguyen","password":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609157377461-POST-/user/sign-up
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","username":"hungnguyen","password":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609157562169-POST-/user/sign-up
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","username":"hungnguyen","password":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609157659493-POST-/user/sign-up
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","username":"hungnguyen","password":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609157835011-POST-/user/sign-up
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","username":"hungnguyen","password":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609159878505-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160113008-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160144698-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160160918-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160176200-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160226588-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160244540-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160260617-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160283285-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160309773-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160327014-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160376925-POST-/user
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"}}
+1609160557346-POST-/users
+-200-{"xu_ly":"thêm user mới","data_send":[{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"},{"name":"Hùng Nguyễn 1","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan1@gmail.com"},{"name":"Hùng Nguyễn 2","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan2@gmail.com"}]}
+1609160601272-POST-/users
+-200-{"xu_ly":"thêm user mới","data_send":[{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"},{"name":"Hùng Nguyễn 1","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan1@gmail.com"},{"name":"Hùng Nguyễn 2","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan2@gmail.com"}]}
+1609163628003-PUT-/users
+-200-{"xu_ly":"thêm user mới","data_send":[{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan118@gmail.com"},{"name":"Hùng Nguyễn 1","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan1@gmail.com"},{"name":"Hùng Nguyễn 2","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan2@gmail.com"}]}
+1609163662408-PUT-/user/hungnguyenxuan2@gmail.com
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan3@gmail.com"}}
+1609163720008-PUT-/user/hungnguyenxuan2@gmail.com
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan3@gmail.com"}}
+1609163825822-PUT-/user/hungnguyenxuan2@gmail.com
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan3@gmail.com"}}
+1609164696764-DELETE-/user/hungnguyenxuan3@gmail.com
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609164764701-DELETE-/user/hungnguyenxuan3@gmail.com
+-200-{"xu_ly":"thêm user mới","data_send":{}}
