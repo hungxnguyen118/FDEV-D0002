@@ -4,12 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fs = require('fs');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var userRouter = require('./routes/user');
 
 var app = express();
+
+app.use(cors());
 
 var complete_log = (req, res, next) => {
   try {

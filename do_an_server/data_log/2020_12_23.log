@@ -68,3 +68,31 @@
 -200-{"xu_ly":"thêm user mới","data_send":{}}
 1609164764701-DELETE-/user/hungnguyenxuan3@gmail.com
 -200-{"xu_ly":"thêm user mới","data_send":{}}
+1609766407481-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"tai_khoan":"hungnguyen","mat_khau":"123456789"}}
+1609766493154-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"tai_khoan":"hungnguyen","mat_khau":"123456789"}}
+1609766500254-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"tai_khoan":"dfdsfdsfdsfs","mat_khau":"123456789"}}
+1609766811037-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"tai_khoan":"dfdsfdsfdsfs","mat_khau":"123456789"}}
+1609766822949-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"tai_khoan":"hungnguyen","mat_khau":"12345678921321321"}}
+1609766831747-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"tai_khoan":"hungnguyen","mat_khau":"123456789"}}
+1609767071783-OPTIONS-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609767232276-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"dsfdsfdsfsd","mat_khau":"34234234234324"}}
+1609767322079-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"dsfdsfdsfsd","mat_khau":"432423423423"}}
+1609767376814-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"dsfdsfdsfsd","mat_khau":"dsfdsfdsfds"}}
+1609767532686-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"dsfdsfdsfsd","mat_khau":"dsfdsfdfdsfdsf"}}
+1609767546046-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"hungnguyen","mat_khau":"3423423432432423"}}
+1609767551532-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"hungnguyen","mat_khau":"123456789"}}
+1609767676872-POST-/user/log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"hungnguyen","mat_khau":"123456789"}}

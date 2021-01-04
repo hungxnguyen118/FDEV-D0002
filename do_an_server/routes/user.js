@@ -108,4 +108,45 @@ router.delete('/:email', authenticate.auth, (req, res) => {
     });
 })
 
+
+router.post('/log-in', (req, res) => {
+    console.log(req.body);
+    MongoClient.connect(url, function(err, client) {
+        if(err)
+            console.log(err);
+        const db = client.db(dbName);
+        const collection_user = db.collection('users');
+        collection_user.findOne({tai_khoan: req.body.tai_khoan}, (err, result) => {
+            if(err)
+                console.log(err);
+
+            if(typeof result != 'undefined' && result != null){
+                if(result.mat_khau == req.body.mat_khau){
+                    //res.status(401);
+                    result.mat_khau = null;
+                    res.json({
+                        'xu_ly': 'đăng nhập thành công',
+                        data_send: result
+                    });
+                }
+                else{
+                    res.status(401);
+                    res.json({
+                        'xu_ly': 'xử lý đăng nhập thất bại, sai tài khoản hoặc mật khẩu',
+                        error: true
+                    });
+                }
+            }
+            else{
+                res.status(401);
+                res.json({
+                    'xu_ly': 'xử lý đăng nhập thất bại, sai tài khoản hoặc mật khẩu',
+                    error: true
+                });
+            }
+        });
+        
+    });
+})
+
 module.exports = router;
