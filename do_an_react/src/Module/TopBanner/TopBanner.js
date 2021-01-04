@@ -1,6 +1,7 @@
 import LogoBanner from './LogoBanner';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 import {Button, Checkbox, Typography, Grid, Slider } from '@material-ui/core';
 import PersonIcon from '@material-ui/icons/Person';
@@ -190,34 +191,72 @@ class TopBanner extends Component {
   handleSubmitLoginForm = (e) => {
     e.preventDefault();
 
-    if(this.state.thong_tin_user.tai_khoan == 'hungnguyen' && this.state.thong_tin_user.mat_khau == '123456'){
-      console.log('Đăng nhập thành công');
-      var thong_tin_user_temp = {...this.state.thong_tin_user};
+    axios.post('http://localhost:4000/user/log-in', this.state.thong_tin_user)
+      .then((result) =>  {
+        console.log(result);
 
-      thong_tin_user_temp.name = 'Hùng Nguyễn';
+        var thong_tin_user_temp = {...this.state.thong_tin_user};
 
-      this.setState({
-        thong_tin_user: thong_tin_user_temp
-      }, () => {
+        thong_tin_user_temp.name = result.data.data_send.name;
 
-        console.log(this.state);
+        this.setState({
+          thong_tin_user: thong_tin_user_temp
+        }, () => {
 
-        thong_tin_user_temp.mat_khau = '';
+          //console.log(this.state);
 
-        localStorage.setItem('thong_tin_user', JSON.stringify(thong_tin_user_temp));
+          thong_tin_user_temp.mat_khau = '';
 
-        $('#modal-id').hide();
-        $('.modal-backdrop').hide();
-        $('body').removeClass('modal-open');
-      });
-    }
-    else{
-      this.setState({
-        message_error: {
-          general_error: 'Tài khoản hoặc Mật khẩu không chính xác'
-        }
+          localStorage.setItem('thong_tin_user', JSON.stringify(thong_tin_user_temp));
+
+          $('#modal-id').hide();
+          $('.modal-backdrop').hide();
+          $('body').removeClass('modal-open');
+          
+        });
+
       })
-    }
+      .catch((err) => {
+        console.log(err);
+        console.log(err.response);
+
+        this.setState({
+          message_error: {
+            general_error: err.response.data.xu_ly
+          }
+        })
+
+      })
+
+    // if(this.state.thong_tin_user.tai_khoan == 'hungnguyen' && this.state.thong_tin_user.mat_khau == '123456'){
+    //   console.log('Đăng nhập thành công');
+    //   var thong_tin_user_temp = {...this.state.thong_tin_user};
+
+    //   thong_tin_user_temp.name = 'Hùng Nguyễn';
+
+    //   this.setState({
+    //     thong_tin_user: thong_tin_user_temp
+    //   }, () => {
+
+    //     console.log(this.state);
+
+    //     thong_tin_user_temp.mat_khau = '';
+
+    //     localStorage.setItem('thong_tin_user', JSON.stringify(thong_tin_user_temp));
+
+    //     $('#modal-id').hide();
+    //     $('.modal-backdrop').hide();
+    //     $('body').removeClass('modal-open');
+    //   });
+    // }
+    // else{
+    //   this.setState({
+    //     message_error: {
+    //       general_error: 'Tài khoản hoặc Mật khẩu không chính xác'
+    //     }
+    //   })
+    // }
+
   }
 
   render() {
