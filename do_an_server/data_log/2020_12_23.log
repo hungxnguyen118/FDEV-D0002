@@ -96,3 +96,69 @@
 -200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"hungnguyen","mat_khau":"123456789"}}
 1609767676872-POST-/user/log-in
 -200-{"xu_ly":"thêm user mới","data_send":{"name":"","tai_khoan":"hungnguyen","mat_khau":"123456789"}}
+1609934798558-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609934811123-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935072903-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935238121-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935245137-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935265424-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935331149-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935360140-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935497182-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935499874-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935539558-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935641011-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609935793343-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609937934759-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609937988665-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609938037474-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609938294658-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609938775112-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609938825038-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609939495031-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609939619521-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609939756955-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609941544037-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609941877164-GET-/movies?thoi_luong=120
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609941972586-GET-/movies?thoi_luong=120
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942006539-GET-/movies?thoi_luong=120
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942045371-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942118042-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942401203-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942413869-GET-/movies?thoi_luong=120
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942458219-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942465042-GET-/movies?thoi_luong=120
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1609942491768-GET-/movies?thoi_luong=100
+-200-{"xu_ly":"thêm user mới","data_send":{}}

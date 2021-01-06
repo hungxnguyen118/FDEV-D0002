@@ -112,3 +112,8 @@ Content-Type: application/json
     "tai_khoan": "hungnguyen",
     "mat_khau": "123456789"
 }
+
+
+###
+GET http://localhost:4000/movies
+Content-Type: application/json
