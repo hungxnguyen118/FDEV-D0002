@@ -7,8 +7,11 @@ include_once('../../model/xl_nguoi_dung.php');
 
 include_once('../../model/xl_token.php');
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
+    
 
     $xl_nguoi_dung = new xl_nguoi_dung();
     $xl_token = new xl_token();
@@ -33,10 +36,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             echo json_encode(array("error" => false, "message" => "login successfully", "data" => $thong_tin_token));
         }
         else{
+            http_response_code(401);
             echo json_encode(array("error" => true, "message" => "login failed! Please check your username and password!", "data" => array()));
         }
     }
     else {
+        http_response_code(401);
         echo json_encode(array("error" => true, "message" => "login failed! Your Account doesn't exist", "data" => array()));
     }
 
