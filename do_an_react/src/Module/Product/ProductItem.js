@@ -5,10 +5,15 @@ const ProductItem = (props) => {
     return (
         <li>
             <Link to={'/chi-tiet/' + props.item_info.id}>
-                <div className="game-grid">
+                {/* <div className="game-grid">
                     <h4>{props.item_info.type}</h4>
                     <p>{props.item_info.title}</p>
                     <img src={props.item_info.image} className="img-responsive" alt="" />
+                </div> */}
+                <div className="game-grid">
+                    {/* <h4>{props.item_info.type}</h4> */}
+                    <p>{props.item_info.ten_phim}</p>
+                    <img src={'/images/phim/' + props.item_info.poster} className="img-responsive" alt="" />
                 </div>
             </Link>
         </li>

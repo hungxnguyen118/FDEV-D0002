@@ -20,6 +20,7 @@ import {
   Switch
 } from 'react-router-dom';
 import TrangTestMaterialUI from './Pages/TrangTestMaterialUI';
+import TrangTimKiem from './Pages/TrangTimKiem';
 
 
 function App() {
@@ -61,6 +62,10 @@ function App() {
 
           <Route path='/test-material-ui'>
             <TrangTestMaterialUI />
+          </Route>
+
+          <Route path='/tim-kiem'>
+            <TrangTimKiem />
           </Route>
 
           <Route path='/'>

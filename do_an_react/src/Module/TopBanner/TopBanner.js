@@ -191,6 +191,7 @@ class TopBanner extends Component {
   handleSubmitLoginForm = (e) => {
     e.preventDefault();
 
+    /* code process call API Express */
     axios.post('http://localhost:4000/user/log-in', this.state.thong_tin_user)
       .then((result) =>  {
         console.log(result);
@@ -227,6 +228,49 @@ class TopBanner extends Component {
         })
 
       })
+
+
+
+    /* code process call API PHP */
+    //console.log(this.state.thong_tin_user);
+    // axios.post('http://localhost:8181/test_php/do_an_nho_nho/api/auth/index.php', this.state.thong_tin_user)
+    // .then((result) =>  {
+    //   console.log(result);
+
+    //   var thong_tin_user_temp = {...this.state.thong_tin_user};
+
+    //   thong_tin_user_temp.name = result.data.data_send.name;
+
+    //   this.setState({
+    //     thong_tin_user: thong_tin_user_temp
+    //   }, () => {
+
+    //     //console.log(this.state);
+
+    //     thong_tin_user_temp.mat_khau = '';
+
+    //     localStorage.setItem('thong_tin_user', JSON.stringify(thong_tin_user_temp));
+
+    //     $('#modal-id').hide();
+    //     $('.modal-backdrop').hide();
+    //     $('body').removeClass('modal-open');
+        
+    //   });
+
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    //   console.log(err.response);
+
+    //   this.setState({
+    //     message_error: {
+    //       general_error: err.response.data.xu_ly
+    //     }
+    //   })
+
+    // })
+
+
 
     // if(this.state.thong_tin_user.tai_khoan == 'hungnguyen' && this.state.thong_tin_user.mat_khau == '123456'){
     //   console.log('Đăng nhập thành công');
