@@ -7,6 +7,9 @@
 var app = require('../app');
 var debug = require('debug')('do-an-server:server');
 var http = require('http');
+const express = require("express");
+
+const socketIo = require("socket.io");
 
 /**
  * Get port from environment and store in Express.
@@ -21,11 +24,32 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+const io = socketIo(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
+
+io.on("connection", (socket) => {
+  console.log("New client connected");
+
+  socket.on('MessageClient', (data) => {
+    console.log(data);
+  })
+
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+  });
+})
+
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () => {
+  console.log(`server is run on port ${port}`);
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -88,3 +112,29 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
+
+
+
+// const app_socket = express();
+
+// var server_socket = http.createServer(app_socket);
+
+// const io = socketIo(server_socket);
+
+// io.on("connection", (socket) => {
+//   console.log("New client connected");
+
+//   socket.on('MessageClient', (data) => {
+//     console.log(data);
+//   })
+
+//   socket.on("disconnect", () => {
+//     console.log("Client disconnected");
+//   });
+// })
+
+// server_socket.listen(4001, () => {
+//   console.log(`Listening on port 4001`);
+// });

@@ -1,18 +1,24 @@
 {
-  "name": "do-an-server",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "cors": "^2.8.5",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "mongodb": "^3.6.3",
-    "morgan": "~1.9.1"
+    "name": "do-an-server",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "server": "node bin/www",
+        "client": "npm start --prefix ../do_an_react",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "dependencies": {
+      "concurrently": "^5.3.0",
+      "cookie-parser": "~1.4.4",
+      "cors": "^2.8.5",
+      "debug": "~2.6.9",
+      "ejs": "~2.6.1",
+      "express": "~4.16.1",
+      "http-errors": "~1.6.3",
+      "md5": "^2.3.0",
+      "mongodb": "^3.6.3",
+      "morgan": "~1.9.1",
+      "mysql": "^2.18.1",
+      "socket.io": "^3.0.5"
+    }
   }
-}
