@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import $ from 'jquery';
+//import $ from 'jquery';
 
 const Slider = () => {
   

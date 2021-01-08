@@ -21,6 +21,7 @@ import {
 } from 'react-router-dom';
 import TrangTestMaterialUI from './Pages/TrangTestMaterialUI';
 import TrangTimKiem from './Pages/TrangTimKiem';
+import FormChat from './Module/FormChat';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
 
   return (
     <>
+    
       <Router>
       
       {
@@ -78,6 +80,8 @@ function App() {
       <Footer />
 
       </Router>
+
+      <FormChat />
 
     </>
   );
