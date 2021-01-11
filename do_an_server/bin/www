@@ -9,6 +9,13 @@ var debug = require('debug')('do-an-server:server');
 var http = require('http');
 const express = require("express");
 
+const MongoClient = require('mongodb').MongoClient;
+
+// Connection URL
+const url = 'mongodb://localhost:27017';
+
+const dbName = 'database_chat';
+
 const socketIo = require("socket.io");
 
 /**
@@ -34,9 +41,34 @@ const io = socketIo(server, {
 io.on("connection", (socket) => {
   console.log("New client connected");
 
-  socket.on('MessageClient', (data) => {
-    console.log(data);
+  socket.on('MessageFromClient', (data) => {
+    //console.log(data);
+
+    var data_message_save = { 
+      "username" : "hungnguyen", 
+      "timestamp" : Date.now(), 
+      "message" : data, 
+      "room" : ""
+  }
+  
+
+    MongoClient.connect(url, function(err, client) {
+      if(err)
+          console.log(err);
+      const db = client.db(dbName);
+      const collection_chat_message = db.collection('chat_message');
+      collection_chat_message.insertOne(data_message_save, () => {
+        socket.broadcast.emit("MessageFromServer", data_message_save);
+        socket.emit("MessageFromServer", data_message_save);
+      });
+
+    });
+    
   })
+
+  // setInterval(() => {
+  //   socket.emit('MessageFromServer', 'Hello Client');
+  // }, 1000);
 
   socket.on("disconnect", () => {
     console.log("Client disconnected");
