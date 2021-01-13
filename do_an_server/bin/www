@@ -41,15 +41,20 @@ const io = socketIo(server, {
 io.on("connection", (socket) => {
   console.log("New client connected");
 
+  socket.on('joinRoom', (room_name) => {
+    console.log('client join room ' + room_name);
+    socket.join(room_name);
+  })
+
   socket.on('MessageFromClient', (data) => {
     //console.log(data);
 
-    var data_message_save = { 
-      "username" : "hungnguyen", 
-      "timestamp" : Date.now(), 
-      "message" : data, 
-      "room" : ""
-  }
+    // var data_message_save = { 
+    //   "username" : "hungnguyen", 
+    //   "timestamp" : Date.now(), 
+    //   "message" : data, 
+    //   "room" : ""
+    // }
   
 
     MongoClient.connect(url, function(err, client) {
@@ -57,9 +62,19 @@ io.on("connection", (socket) => {
           console.log(err);
       const db = client.db(dbName);
       const collection_chat_message = db.collection('chat_message');
-      collection_chat_message.insertOne(data_message_save, () => {
-        socket.broadcast.emit("MessageFromServer", data_message_save);
-        socket.emit("MessageFromServer", data_message_save);
+      collection_chat_message.insertOne(data, () => {
+        
+        if(data.room){
+          console.log('room', data.room);
+          io.in(data.room).emit('MessageFromServer', data);
+        }
+        else{
+          console.log('broadcast');
+          socket.broadcast.emit("MessageFromServer", data);
+          socket.emit("MessageFromServer", data);
+        }
+        
+        
       });
 
     });
