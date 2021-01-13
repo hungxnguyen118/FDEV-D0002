@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import axios from 'axios';
 
+import $ from 'jquery';
+
 const ENDPOINT = "http://localhost:4000/";
 
 const socket = socketIOClient(ENDPOINT);
@@ -16,7 +18,13 @@ function PopupChat() {
 
   const [message_server, setMessageServer] = useState('chưa có message');
 
+  const [current_username, setCurrentUsername] = useState('');
+
+  
+
   useEffect(() => {
+
+    
 
     axios.get('http://localhost:4000/messages')
       .then((results) => {
@@ -35,12 +43,74 @@ function PopupChat() {
         //setMessageServer(data);
         setListMessage(list_message => [...list_message, data]);
       });
+
+
+      var thong_tin_user_save = localStorage.getItem('thong_tin_user');
+
+      if(typeof thong_tin_user_save != 'undefined' && thong_tin_user_save != null){
+        //console.log(thong_tin_user_save);
+        var user_temp = JSON.parse(thong_tin_user_save);
+        if(user_temp.tai_khoan){
+          setCurrentUsername(user_temp.tai_khoan);
+
+          socket.emit('joinRoom', 'room1');
+        }
+      }
     
   }, []);
 
+  useEffect(() => {
+    //console.log(document.getElementsByClassName('danh_sach_chat')[0])
+    //window.scrollTo(document.height);
+    document.getElementsByClassName('danh_sach_chat')[0].scrollTop = document.getElementsByClassName('danh_sach_chat')[0].scrollHeight;
+    //$('.danh_sach_chat').animate({scrollTo: $('.danh_sach_chat').height()});
+  }, [list_message])
+
   const handleSendMessageToServer = (e) => {
     e.preventDefault();
-    socket.emit("MessageFromClient", input_message);
+
+    var thong_tin_user_save = localStorage.getItem('thong_tin_user');
+
+    if(typeof thong_tin_user_save != 'undefined' && thong_tin_user_save != null){
+      //console.log(thong_tin_user_save);
+      var user_temp = JSON.parse(thong_tin_user_save);
+      if(user_temp.tai_khoan){
+        var data_message_save = { 
+          "username" : user_temp.tai_khoan, 
+          "timestamp" : Date.now(), 
+          "message" : input_message, 
+          "room" : "room1"
+        }
+        socket.emit("MessageFromClient", data_message_save);
+
+        setInputMessage('');
+      }
+      else{
+        //alert('Bạn vui lòng đăng nhập để chat');
+
+        var data_message_save = { 
+          "username" : "anonymous", 
+          "timestamp" : Date.now(), 
+          "message" : input_message, 
+          "room" : ""
+        }
+        socket.emit("MessageFromClient", data_message_save);
+
+      }
+    }
+    else{
+      //console.log(456);
+      //alert('Bạn vui lòng đăng nhập để chat');
+
+      var data_message_save = { 
+        "username" : "anonymous", 
+        "timestamp" : Date.now(), 
+        "message" : input_message, 
+        "room" : ""
+      }
+      socket.emit("MessageFromClient", data_message_save);
+
+    }
     //setListMessage(list_message => [...list_message, input_message]);
   }
 
@@ -77,7 +147,9 @@ function PopupChat() {
             {
               list_message.map( item_message => {
                 return (
-                  <div className="item_message" title={item_message.username}>
+                  <div className={'item_message' 
+                  + ((item_message.username == current_username)?' current_user':'')} 
+                  title={item_message.username}>
                     {item_message.message}
                   </div>
                 )
