@@ -1214,3 +1214,153 @@
 -200-{"xu_ly":"thêm user mới","data_send":{}}
 1610547788369-GET-/messages
 -200-{"xu_ly":"thêm user mới","data_send":{}}
+1610710913623-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610710913721-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610710913725-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610710913727-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610711269182-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610711269196-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610711269198-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610711269224-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718638825-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718638843-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718638844-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718638853-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718731826-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718731840-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718731847-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718731867-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718740297-POST-/upload
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718740328-GET-/favicon.ico
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718786046-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718786048-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718786050-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718786086-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718809944-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718870984-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718914395-GET-/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718961074-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718961089-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718961091-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718961161-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610718968403-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719030686-GET-/upload
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719062327-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719062342-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719062344-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719062395-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719066678-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719314125-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719314137-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719314146-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719314234-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719322934-POST-/upload_file
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719349785-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719349791-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719349794-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719349878-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719354315-POST-/upload
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719369724-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719369742-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719369743-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719369747-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719373340-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719467763-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719467765-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719467789-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719467858-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719478568-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719517256-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719828536-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719828538-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719828552-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719828622-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719833740-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610719918153-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720014438-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720059862-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720148171-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720148181-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720148193-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720148195-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720153955-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720290196-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720290206-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720290218-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720290221-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610720300197-POST-/upload/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
