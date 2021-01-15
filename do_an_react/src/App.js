@@ -23,6 +23,8 @@ import TrangTestMaterialUI from './Pages/TrangTestMaterialUI';
 import TrangTimKiem from './Pages/TrangTimKiem';
 import FormChat from './Module/FormChat';
 
+import UploadFile from './Module/UploadFile';
+
 
 function App() {
   let abc = 'Chào các bạn';
@@ -82,6 +84,8 @@ function App() {
       </Router>
 
       <FormChat />
+
+      <UploadFile />
 
     </>
   );
