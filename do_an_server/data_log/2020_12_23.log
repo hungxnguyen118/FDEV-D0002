@@ -1364,3 +1364,13 @@
 -200-{"xu_ly":"thêm user mới","data_send":{}}
 1610720300197-POST-/upload/
 -200-{"xu_ly":"thêm user mới","data_send":{}}
+1610970094972-GET-/movies
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610970095062-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610970095063-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1610970095067-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611149650611-POST-/user/sign-up
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng test","tai_khoan":"hungtest","mat_khau":"12345678","email":"nxhung118@gmail.com"}}
