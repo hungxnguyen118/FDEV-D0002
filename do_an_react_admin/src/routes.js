@@ -13,6 +13,7 @@ import SettingsView from 'src/views/settings/SettingsView';
 import TestComponent from 'src/views/test/CustomerListView';
 import UserListView from 'src/views/users/UserListView';
 import FormUsersAdd from 'src/views/users/FormUsersAdd';
+import FormUserEdit from 'src/views/users/FormUserEdit';
 
 const routes = [
   {
@@ -27,6 +28,7 @@ const routes = [
       { path: 'products', element: <ProductListView /> },
       { path: 'settings', element: <SettingsView /> },
       { path: 'users', element: <UserListView /> },
+      { path: 'users/:id_user', element: <FormUserEdit /> },
       { path: 'users/them', element: <FormUsersAdd /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]

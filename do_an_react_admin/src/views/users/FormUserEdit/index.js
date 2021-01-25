@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Formik } from 'formik';
 import {
   Box,
   Button,
-  Checkbox,
   Container,
-  FormHelperText,
-  Link,
   TextField,
   Typography,
   makeStyles
@@ -25,9 +22,10 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const FormUsersAdd = () => {
+const FormUserEdit = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const param = useParams();
   const [userInfo, setUserInfo] = useState({
     name: '',
     tai_khoan: '',
@@ -35,27 +33,37 @@ const FormUsersAdd = () => {
     email: ''
   });
 
-  const [policy, setPolicy] = useState(false);
-
   const [typeError, setTypeError] = useState('');
   const [messageError, setMessageError] = useState('');
+
+  useEffect(() => {
+    console.log(param);
+    axios.get(`http://localhost:4000/user/${param.id_user}`)
+      .then((reponse) => {
+        console.log(reponse);
+        setUserInfo(reponse.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(userInfo);
-    axios.post('http://localhost:4000/user/sign-up', userInfo)
+    axios.put(`http://localhost:4000/user/${param.id_user}`, userInfo)
       .then((data) => {
         console.log(data);
         setTypeError('success');
-        setMessageError('tạo user thành công!');
+        setMessageError('cập nhật thông tin user thành công!');
         setTimeout(() => {
           navigate('/app/users', { replace: true });
-        }, 5000);
+        }, 10000);
       })
       .catch((err) => {
         console.log(err);
         setTypeError('error');
-        setMessageError('tạo user thất bại!');
+        setMessageError('cập nhật thông tin user thất bại!');
       });
   };
 
@@ -65,10 +73,6 @@ const FormUsersAdd = () => {
       ...userInfo,
       [e.target.name]: e.target.value
     });
-  };
-
-  const handleChangePolicy = () => {
-    setPolicy(!policy);
   };
 
   return (
@@ -161,38 +165,6 @@ const FormUsersAdd = () => {
                   value={userInfo.mat_khau}
                   variant="outlined"
                 />
-                <Box
-                  alignItems="center"
-                  display="flex"
-                  ml={-1}
-                >
-                  <Checkbox
-                    checked={policy}
-                    name="policy"
-                    onChange={handleChangePolicy}
-                  />
-                  <Typography
-                    color="textSecondary"
-                    variant="body1"
-                  >
-                    I have read the
-                    {' '}
-                    <Link
-                      color="primary"
-                      component={RouterLink}
-                      to="#"
-                      underline="always"
-                      variant="h6"
-                    >
-                      Terms and Conditions
-                    </Link>
-                  </Typography>
-                </Box>
-                {Boolean(touched.policy && errors.policy) && (
-                  <FormHelperText error>
-                    {errors.policy}
-                  </FormHelperText>
-                )}
                 <Box my={2}>
                   <Button
                     color="primary"
@@ -202,7 +174,7 @@ const FormUsersAdd = () => {
                     type="submit"
                     variant="contained"
                   >
-                    Sign up now
+                    Update now
                   </Button>
                 </Box>
               </form>
@@ -214,4 +186,4 @@ const FormUsersAdd = () => {
   );
 };
 
-export default FormUsersAdd;
+export default FormUserEdit;

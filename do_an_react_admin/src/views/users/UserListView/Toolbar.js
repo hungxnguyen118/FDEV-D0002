@@ -57,6 +57,7 @@ const Toolbar = ({ className, ...rest }) => {
             <Box maxWidth={500}>
               <TextField
                 fullWidth
+                onChange={rest.processInput}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">

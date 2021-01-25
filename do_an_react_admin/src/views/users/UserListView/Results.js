@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
   Box,
@@ -12,8 +13,12 @@ import {
   TableHead,
   TablePagination,
   TableRow,
+  Button,
   makeStyles
 } from '@material-ui/core';
+import axios from 'axios';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -64,6 +69,22 @@ const Results = ({ className, customers, ...rest }) => {
     setPage(newPage);
   };
 
+  const handleDeleteUser = (idUser) => {
+    console.log(idUser);
+    axios.delete(`http://localhost:4000/user/${idUser}`, {
+      auth: {
+        username: 'hungnguyen',
+        password: '123456'
+      }
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const handleLimitChange = (event) => {
     setLimit(event.target.value);
   };
@@ -99,10 +120,10 @@ const Results = ({ className, customers, ...rest }) => {
                   Location
                 </TableCell>
                 <TableCell>
-                  Phone
+                  Email
                 </TableCell>
                 <TableCell>
-                  Registration date
+                  Action
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -131,6 +152,16 @@ const Results = ({ className, customers, ...rest }) => {
                   </TableCell>
                   <TableCell>
                     {customer.email}
+                  </TableCell>
+                  <TableCell>
+                    <Link to={`/app/users/${customer._id}`}>
+                      <Button variant="contained" color="primary">
+                        <EditIcon />
+                      </Button>
+                    </Link>
+                    <Button variant="contained" color="secondary" style={{ background: '#e23f0e' }} onClick={() => { handleDeleteUser(customer._id); }}>
+                      <DeleteIcon />
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}
