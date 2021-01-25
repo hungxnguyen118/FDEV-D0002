@@ -1374,3 +1374,83 @@
 -200-{"xu_ly":"thêm user mới","data_send":{}}
 1611149650611-POST-/user/sign-up
 -200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng test","tai_khoan":"hungtest","mat_khau":"12345678","email":"nxhung118@gmail.com"}}
+1611579449396-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611580074019-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611580548733-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611580701156-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611580706048-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611580767607-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611580770111-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581574462-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581576224-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581616425-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581620781-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581625573-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581732224-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581770140-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581906627-PUT-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan1188@gmail.com"}}
+1611581981138-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611581995877-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582003660-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582014539-PUT-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{"_id":"5fe9d7998598f8140c7344c0","name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan111888@gmail.com"}}
+1611582024879-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582049349-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582103231-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582178428-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582180163-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582187170-PUT-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{"_id":"5fe9d7998598f8140c7344c0","name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan111888@gmail.com"}}
+1611582355357-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582365209-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582373038-PUT-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{"_id":null,"name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan111888@gmail.com"}}
+1611582510313-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582518607-PUT-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{"_id":"5fe9d7998598f8140c7344c0","name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan111888@gmail.com"}}
+1611582554873-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582556238-GET-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611582563561-PUT-/user/5fe9d7998598f8140c7344c0
+-200-{"xu_ly":"thêm user mới","data_send":{"_id":"5fe9d7998598f8140c7344c0","name":"Hùng Nguyễn","tai_khoan":"hungnguyen","mat_khau":"123456789","email":"hungnguyenxuan18@gmail.com"}}
+1611582573743-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611583753576-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611583975092-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611584069378-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611584199564-DELETE-/user/600eb6b03d8ce1156c27c805
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611584579967-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1611584587962-DELETE-/user/600eb1bb3d8ce1156c27c804
+-200-{"xu_ly":"thêm user mới","data_send":{}}

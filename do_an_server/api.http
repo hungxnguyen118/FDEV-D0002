@@ -30,7 +30,8 @@ DELETE http://localhost:4000/users
 GET http://localhost:4000/user/
 
 ###
-GET http://localhost:4000/user/hungnguyenxuan118@gmail.com
+#GET http://localhost:4000/user/hungnguyenxuan118@gmail.com
+GET http://localhost:4000/user/5fe9d7998598f8140c7344c0
 
 ###
 POST http://localhost:4000/user
@@ -86,19 +87,19 @@ Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=
 
 
 ###
-PUT http://localhost:4000/user/hungnguyenxuan2@gmail.com
+PUT http://localhost:4000/user/5fe9d7998598f8140c7344c0
 Content-Type: application/json
 
-{
-    "name": "Hùng Nguyễn",
-    "tai_khoan": "hungnguyen",
-    "mat_khau": "123456789",
-    "email": "hungnguyenxuan3@gmail.com"
+{ 
+    "name" : "Hùng Nguyễn", 
+    "tai_khoan" : "hungnguyen", 
+    "mat_khau" : "123456789", 
+    "email" : "hungnguyenxuan1188@gmail.com"
 }
 
 
 ###
-DELETE http://localhost:4000/user/hungnguyenxuan3@gmail.com
+DELETE http://localhost:4000/user/600eb6b03d8ce1156c27c805
 Content-Type: application/json
 Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=
 

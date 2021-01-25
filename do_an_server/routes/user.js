@@ -4,6 +4,7 @@ var fs = require('fs');
 var authenticate = require('../middleware/auth');
 
 const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
 
 // Connection URL
 const url = 'mongodb://localhost:27017';
@@ -39,7 +40,8 @@ router.get('/:id_user', (req, res) => {
             console.log(err);
         const db = client.db(dbName);
         const collection_user = db.collection('users');
-        collection_user.findOne({'email': req.params.id_user},function(err, info_user) {
+        //collection_user.findOne({'email': req.params.id_user},function(err, info_user) {
+        collection_user.findOne({'_id': ObjectID(req.params.id_user)},function(err, info_user) {
             if(err)
                 console.log(err);
             //console.log(ds_user);
@@ -73,16 +75,18 @@ router.post('/sign-up', (req, res) => {
     });
 });
 
-router.put('/:email', (req, res) => {
+router.put('/:id_user', (req, res) => {
     //console.log(req.params.email);
     MongoClient.connect(url, function(err, client) {
         if(err)
             console.log(err);
         const db = client.db(dbName);
         const collection_user = db.collection('users');
-        collection_user.updateOne({email: req.params.email}, { $set: req.body }, () => {
+        delete req.body._id;
+        //collection_user.updateOne({email: req.params.email}, { $set: req.body }, () => {
+        collection_user.updateOne({_id: ObjectID(req.params.id_user)}, { $set: req.body }, () => {
             res.json({
-                'xu_ly': 'update user ' + req.params.email + ' thành công',
+                'xu_ly': 'update user ' + req.params.id_user + ' thành công',
                 data_send: req.body
             });
         });
@@ -91,14 +95,15 @@ router.put('/:email', (req, res) => {
 });
 
 
-router.delete('/:email', authenticate.auth, (req, res) => {
+//router.delete('/:email', authenticate.auth, (req, res) => {
+router.delete('/:id_user', authenticate.auth, (req, res) => {
     console.log(req.params.email);
     MongoClient.connect(url, function(err, client) {
         if(err)
             console.log(err);
         const db = client.db(dbName);
         const collection_user = db.collection('users');
-        collection_user.deleteOne({email: req.params.email}, () => {
+        collection_user.deleteOne({_id: ObjectID(req.params.id_user)}, () => {
             res.json({
                 'xu_ly': 'delete user ' + req.params.email + ' thành công',
                 data_send: req.body
