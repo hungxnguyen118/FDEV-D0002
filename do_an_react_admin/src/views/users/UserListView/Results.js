@@ -14,6 +14,8 @@ import {
   TablePagination,
   TableRow,
   Button,
+  Dialog,
+  DialogActions,
   makeStyles
 } from '@material-ui/core';
 import axios from 'axios';
@@ -32,6 +34,8 @@ const Results = ({ className, customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
+  const [open, setOpen] = React.useState(false);
+  const [userIdCurrent, setUserIdCurrent] = useState('');
 
   const handleSelectAll = (event) => {
     let newSelectedCustomerIds;
@@ -69,13 +73,51 @@ const Results = ({ className, customers, ...rest }) => {
     setPage(newPage);
   };
 
+  const handleLimitChange = (event) => {
+    setLimit(event.target.value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleClickOpen = (idUser) => {
+    setOpen(true);
+    setUserIdCurrent(idUser);
+  };
+
   const handleDeleteUser = (idUser) => {
     console.log(idUser);
-    axios.delete(`http://localhost:4000/user/${idUser}`, {
+    handleClickOpen(idUser);
+  };
+
+  const handleSendRequestDeleteUser = () => {
+    axios.delete(`http://localhost:4000/user/${userIdCurrent}`, {
       auth: {
         username: 'hungnguyen',
         password: '123456'
       }
+    })
+      .then((response) => {
+        console.log(response);
+        rest.handleChangeComponent();
+        handleClose();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleRemoveUserSelected = () => {
+    console.log('xoa danh sach user');
+    console.log(selectedCustomerIds);
+
+    axios.delete('http://localhost:4000/users', {
+      auth: {
+        username: 'hungnguyen',
+        password: '123456'
+      },
+      data: selectedCustomerIds
     })
       .then((response) => {
         console.log(response);
@@ -85,16 +127,27 @@ const Results = ({ className, customers, ...rest }) => {
       });
   };
 
-  const handleLimitChange = (event) => {
-    setLimit(event.target.value);
-  };
-
   return (
     <Card
       className={clsx(classes.root, className)}
       {...rest}
     >
+      <Button autoFocus onClick={handleRemoveUserSelected} color="secondary">
+        Delete Selected
+      </Button>
       <PerfectScrollbar>
+
+        <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+          <DialogActions>
+            <Button autoFocus onClick={handleSendRequestDeleteUser} color="secondary">
+              OK
+            </Button>
+            <Button autoFocus onClick={handleClose} color="primary">
+              Cancel
+            </Button>
+          </DialogActions>
+        </Dialog>
+
         <Box minWidth={1050}>
           <Table>
             <TableHead>

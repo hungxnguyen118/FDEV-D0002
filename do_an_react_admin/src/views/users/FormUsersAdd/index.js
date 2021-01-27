@@ -39,8 +39,10 @@ const FormUsersAdd = () => {
 
   const [typeError, setTypeError] = useState('');
   const [messageError, setMessageError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (event) => {
+    setIsSubmitting(true);
     event.preventDefault();
     console.log(userInfo);
     axios.post('http://localhost:4000/user/sign-up', userInfo)
@@ -56,6 +58,7 @@ const FormUsersAdd = () => {
         console.log(err);
         setTypeError('error');
         setMessageError('tạo user thất bại!');
+        setIsSubmitting(false);
       });
   };
 
@@ -92,7 +95,6 @@ const FormUsersAdd = () => {
             {({
               errors,
               handleBlur,
-              isSubmitting,
               touched
             }) => (
               <form onSubmit={handleSubmit}>

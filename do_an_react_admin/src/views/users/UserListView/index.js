@@ -26,6 +26,8 @@ const UserListView = () => {
 
   const [valueSearch, setValueSearch] = useState('');
 
+  const [valueChange, setValueChange] = useState(0);
+
   useEffect(() => {
     setListUsers(data);
     axios.get('http://localhost:4000/users/')
@@ -36,7 +38,11 @@ const UserListView = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [valueChange]);
+
+  const handleChangeComponent = () => {
+    setValueChange(valueChange + 1);
+  };
 
   const handleProcessSearchValue = (e) => {
     setValueSearch(e.target.value);
@@ -58,6 +64,7 @@ const UserListView = () => {
                 return temp.tai_khoan.indexOf(valueSearch) >= 0;
               })
             }
+            handleChangeComponent={handleChangeComponent}
           />
         </Box>
       </Container>
