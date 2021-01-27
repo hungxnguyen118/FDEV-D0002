@@ -23,6 +23,10 @@ PUT http://localhost:4000/users
 
 ###
 DELETE http://localhost:4000/users
+Content-Type: application/json
+Authorization: Basic aHVuZ25ndXllbjoxMjM0NTY=
+
+["asdasd","bbbb","ccc"]
 
 
 
