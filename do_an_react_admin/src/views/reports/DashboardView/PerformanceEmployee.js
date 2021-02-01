@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { Bar } from 'react-chartjs-2';
+import { Radar } from 'react-chartjs-2';
 import {
   Box,
   Button,
@@ -10,8 +10,7 @@ import {
   CardHeader,
   Divider,
   useTheme,
-  makeStyles,
-  colors
+  makeStyles
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -21,27 +20,14 @@ const useStyles = makeStyles(() => ({
   root: {}
 }));
 
-const Sales = ({ className, ...rest }) => {
+const PerformanceEmployee = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const [numberDayOfMonth, setNumberDayOfMonth] = useState([]);
-  const [data1, setData1] = useState([]);
-  const [data2, setData2] = useState([]);
+  const [dataEmployee, setDataEmployee] = useState([]);
 
   const data = {
-    datasets: [
-      {
-        backgroundColor: colors.indigo[500],
-        data: data1,
-        label: 'This year'
-      },
-      {
-        backgroundColor: colors.red.A400,
-        data: data2,
-        label: '2020'
-      }
-    ],
-    labels: numberDayOfMonth
+    datasets: dataEmployee,
+    labels: ['IQ', 'EQ', 'Physical', 'Creative', 'Language', 'Soft-skill']
   };
 
   const options = {
@@ -100,29 +86,10 @@ const Sales = ({ className, ...rest }) => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:4000/dashboard/get-last-month')
-      .then((response) => {
-        console.log(response);
-        setNumberDayOfMonth(response.data);
-        setInterval(() => {
-          axios.get('http://localhost:4000/dashboard/data-last-month')
-            .then((response1) => {
-              console.log(response1);
-              setData1(response1.data);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-
-          axios.get('http://localhost:4000/dashboard/data-last-month')
-            .then((response2) => {
-              console.log(response2);
-              setData2(response2.data);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        }, 1000);
+    axios.get('http://localhost:4000/dashboard/data-employee')
+      .then((res) => {
+        console.log(res);
+        setDataEmployee(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -152,7 +119,7 @@ const Sales = ({ className, ...rest }) => {
           height={400}
           position="relative"
         >
-          <Bar
+          <Radar
             data={data}
             options={options}
           />
@@ -177,8 +144,8 @@ const Sales = ({ className, ...rest }) => {
   );
 };
 
-Sales.propTypes = {
+PerformanceEmployee.propTypes = {
   className: PropTypes.string
 };
 
-export default Sales;
+export default PerformanceEmployee;
