@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var userRouter = require('./routes/user');
 var moviesRouter = require('./routes/movies');
 var messageRouter = require('./routes/message');
+var dashboardRouter = require('./routes/dashboard');
 var uploadRouter = require('./routes/upload_file');
 
 var app = express();
@@ -60,6 +61,7 @@ app.use('/user', userRouter);
 app.use('/movies', moviesRouter);
 app.use('/messages', messageRouter);
 app.use('/upload', uploadRouter);
+app.use('/dashboard', dashboardRouter);
 
 
 // catch 404 and forward to error handler
