@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var authenticate = require('../middleware/auth');
+var md5 = require('md5');
 
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
@@ -9,7 +10,7 @@ const ObjectID = require('mongodb').ObjectID;
 // Connection URL
 const url = 'mongodb://localhost:27017';
 
-const dbName = 'database_chat';
+const dbName = 'shop_online';
 
 router.get('/', (req, res) => {
     MongoClient.connect(url, function(err, client) {
@@ -62,14 +63,20 @@ router.post('/', authenticate.auth, (req, res) => {
 
 router.post('/sign-up', (req, res) => {
     MongoClient.connect(url, function(err, client) {
+        var data_save = req.body;
+        var created_date = new Date().toISOString();
+        data_save.created_date = created_date;
+        data_save.updated_date = created_date;
+        data_save.mat_khau = md5(data_save.mat_khau);
+
         if(err)
             console.log(err);
         const db = client.db(dbName);
         const collection_user = db.collection('users');
-        collection_user.insertOne(req.body, () => {
+        collection_user.insertOne(data_save, () => {
             res.json({
                 'xu_ly': 'đăng ký user mới',
-                data_send: req.body
+                data_send: data_save
             });
         })
     });
@@ -77,20 +84,34 @@ router.post('/sign-up', (req, res) => {
 
 router.put('/:id_user', (req, res) => {
     //console.log(req.params.email);
+    //console.log(req.body);
     MongoClient.connect(url, function(err, client) {
         if(err)
             console.log(err);
         const db = client.db(dbName);
         const collection_user = db.collection('users');
         delete req.body._id;
-        //collection_user.updateOne({email: req.params.email}, { $set: req.body }, () => {
-        collection_user.updateOne({_id: ObjectID(req.params.id_user)}, { $set: req.body }, () => {
-            res.json({
-                'xu_ly': 'update user ' + req.params.id_user + ' thành công',
-                data_send: req.body
+
+        collection_user.findOne({_id: ObjectID(req.params.id_user)}, function(err, info_user){
+            if(err)
+                console.log(err);
+            var data_save = req.body;
+            if(req.body.mat_khau == info_user.mat_khau){
+                data_save.mat_khau = info_user.mat_khau;
+            }
+            else {
+                data_save.mat_khau = md5(req.body.mat_khau);
+            }
+            var updated_date = new Date().toISOString();
+            data_save.updated_date = updated_date;
+            //collection_user.updateOne({email: req.params.email}, { $set: req.body }, () => {
+            collection_user.updateOne({_id: ObjectID(req.params.id_user)}, { $set: data_save }, () => {
+                res.json({
+                    'xu_ly': 'update user ' + req.params.id_user + ' thành công',
+                    data_send: req.body
+                });
             });
         });
-        
     });
 });
 
@@ -126,7 +147,7 @@ router.post('/log-in', (req, res) => {
                 console.log(err);
 
             if(typeof result != 'undefined' && result != null){
-                if(result.mat_khau == req.body.mat_khau){
+                if(result.mat_khau == md5(req.body.mat_khau)){
                     //res.status(401);
                     result.mat_khau = null;
                     res.json({

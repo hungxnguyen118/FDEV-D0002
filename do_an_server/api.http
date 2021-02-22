@@ -137,3 +137,10 @@ GET http://localhost:4000/dashboard/data-last-month
 
 ###
 GET http://localhost:4000/dashboard/data-employee
+
+
+###
+GET http://localhost:4000/dashboard/don-hang/2016
+
+###
+GET http://localhost:4000/dashboard/don-hang-so-thang/2016
