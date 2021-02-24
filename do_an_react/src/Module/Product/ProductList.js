@@ -4,22 +4,22 @@ import axios from 'axios';
 
 const ProductList = (props) => {
 
-    const [ds_movie, SetDSMovie] = useState([]);
+    // const [ds_movie, SetDSMovie] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://localhost:4000/movies')
-        .then((result) => {
-            console.log(result);
+    // useEffect(() => {
+    //     axios.get('http://localhost:4000/movies')
+    //     .then((result) => {
+    //         console.log(result);
 
-            if(typeof result.data != 'undefined' && result.data.data_send != null){
-                SetDSMovie(result.data.data_send)
-            }
+    //         if(typeof result.data != 'undefined' && result.data.data_send != null){
+    //             SetDSMovie(result.data.data_send)
+    //         }
 
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-    }, [])
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     })
+    // }, [])
 
     return (
         <ul id="flexiselDemo1">
@@ -27,7 +27,7 @@ const ProductList = (props) => {
                 // props.list_item.map(item_info => 
                 //     <ProductItem  item_info={item_info} />
                 // )
-                ds_movie.map(item_info => 
+                props.list_item.map(item_info => 
                     <ProductItem  item_info={item_info} />
                 )
             }

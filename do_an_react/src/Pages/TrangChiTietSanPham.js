@@ -5,6 +5,8 @@ import { Container, Grid } from '@material-ui/core';
 
 import { withRouter } from "react-router";
 
+import axios from 'axios';
+
 class TrangChiTietSanPham extends Component {
 
     constructor(props){
@@ -48,15 +50,26 @@ class TrangChiTietSanPham extends Component {
         let id_san_pham = this.props.match.params.id_san_pham;
         //console.log(id_san_pham);
 
-        this.state.list_item.forEach((item) => {
-            if(item.id == id_san_pham){
+        // this.state.list_item.forEach((item) => {
+        //     if(item.id == id_san_pham){
+        //         this.setState({
+        //             item_current: item
+        //         }, () => {
+        //             //console.log(this.state.item_current)
+        //         })
+        //     }
+        // })
+
+        axios.get('http://localhost:4000/product/' + id_san_pham)
+            .then((response) => {
+                console.log(response);
                 this.setState({
-                    item_current: item
-                }, () => {
-                    //console.log(this.state.item_current)
+                    item_current: response.data[0]
                 })
-            }
-        })
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     render() {

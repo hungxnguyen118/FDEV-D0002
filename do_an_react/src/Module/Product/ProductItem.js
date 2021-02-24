@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ProductItem = (props) => {
     return (
         <li>
-            <Link to={'/chi-tiet/' + props.item_info.id}>
+            <Link to={'/chi-tiet/' + props.item_info.ma}>
                 {/* <div className="game-grid">
                     <h4>{props.item_info.type}</h4>
                     <p>{props.item_info.title}</p>
@@ -12,8 +12,8 @@ const ProductItem = (props) => {
                 </div> */}
                 <div className="game-grid">
                     {/* <h4>{props.item_info.type}</h4> */}
-                    <p>{props.item_info.ten_phim}</p>
-                    <img src={'/images/phim/' + props.item_info.poster} className="img-responsive" alt="" />
+                    <p>{props.item_info.ten_san_pham}</p>
+                    <img src={'/images/san_pham/' + props.item_info.hinh_san_pham} className="img-responsive" alt="" />
                 </div>
             </Link>
         </li>

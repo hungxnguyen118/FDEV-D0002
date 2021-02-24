@@ -31,7 +31,7 @@ const Xbox = (props) => {
             var flag_co_trong_gio_hang_hay_khong = false;
 
             for(var i = 0; i< mang_gio_hang_temp.length; i++){
-                if(mang_gio_hang_temp[i].id == props.item_current.id){
+                if(mang_gio_hang_temp[i].ma == props.item_current.ma){
                     mang_gio_hang_temp[i].so_luong += 1;
                     flag_co_trong_gio_hang_hay_khong = true;
                     break;
@@ -62,19 +62,17 @@ const Xbox = (props) => {
             <div className="container">
             <div className="x-box_sec">
                 <div className="col-md-7 x-box-left">
-                <h2>{props.item_current.title}</h2>
-                <h3>{props.item_current.type}</h3>
-                <p>Proin ornare metus eros, quis mattis lorem venenatis eget. Curabitur eget dui
-                    euismod, varius nisl eu, pharetra lacus. Sed vehicula tempor leo. Aenean dictum suscipit magna
-                    vel tempus.
-                    Aliquam nec dui dolor. Quisque scelerisque aliquet est et dignissim.</p>
-                <div>{props.item_current.price}</div>
+                <h2>{props.item_current.ten_san_pham}</h2>
+                <h3>{props.item_current.so_lan_xem}</h3>
+                <div dangerouslySetInnerHTML={{__html: props.item_current.mo_ta_chi_tiet}}>
+                </div>
+                <div>{props.item_current.don_gia}</div>
                 <a className="hvr-bounce-to-top" onClick={handleClick}>Buy now</a>
                 </div>
                 {
                     (an_hien_hinh)?
                     <div className="col-md-5 x-box-right">
-                        <img src="images/xbox.jpg" className="img-responsive" alt="" />
+                        <img src={'images/san_pham/' + props.item_current.hinh_san_pham} className="img-responsive" alt="" />
                     </div>
                     :
                     <></>

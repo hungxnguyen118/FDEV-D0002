@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductList from '../Product/ProductList';
+import axios from 'axios';
 
 const Content = () => {
 
@@ -33,6 +34,17 @@ const Content = () => {
         'price': 1200000
       }
     ]);
+
+    useEffect(() => {
+      axios.get('http://localhost:4000/products')
+      .then((response) => {
+        console.log(response);
+        SetListItem(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }, []);
 
     return (
         <div className="content">

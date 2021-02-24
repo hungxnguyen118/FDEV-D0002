@@ -20,27 +20,27 @@ class ItemGioHang extends Component {
     handleButtonClick(string_loai){
         if(string_loai == '-'){
             if(this.props.info_item.so_luong - 1 > 0){
-                this.props.handle_process(this.props.info_item.id, this.props.info_item.so_luong - 1);
+                this.props.handle_process(this.props.info_item.ma, this.props.info_item.so_luong - 1);
             }
             else{
-                this.props.handle_process(this.props.info_item.id, 1);
-                var key = window.confirm('Bạn có muốn xóa sản phẩm ' + this.props.info_item.title + ' khỏi giỏ hàng không?');
+                this.props.handle_process(this.props.info_item.ma, 1);
+                var key = window.confirm('Bạn có muốn xóa sản phẩm ' + this.props.info_item.ten_san_pham + ' khỏi giỏ hàng không?');
                 //console.log(key);
                 if(key == true){
-                    this.props.handle_remove_item(this.props.info_item.id);
+                    this.props.handle_remove_item(this.props.info_item.ma);
                 }
             }
         }
         else{
-            this.props.handle_process(this.props.info_item.id, this.props.info_item.so_luong + 1);
+            this.props.handle_process(this.props.info_item.ma, this.props.info_item.so_luong + 1);
         }
     }
 
     handleButtonRemoveItemCart(){
-        var key = window.confirm('Bạn có chắc chắn muốn xóa sản phẩm ' + this.props.info_item.title + ' khỏi giỏ hàng không?');
+        var key = window.confirm('Bạn có chắc chắn muốn xóa sản phẩm ' + this.props.info_item.ten_san_pham + ' khỏi giỏ hàng không?');
         //console.log(key);
         if(key == true){
-            this.props.handle_remove_item(this.props.info_item.id);
+            this.props.handle_remove_item(this.props.info_item.ma);
         }
     }
 
@@ -56,15 +56,15 @@ class ItemGioHang extends Component {
             {
                 (this.props.info_item)?
                 <tr>
-                    <td>{this.props.info_item.id}</td>
-                    <td>{this.props.info_item.title + this.props.info_item.type}</td>
+                    <td>{this.props.info_item.ma}</td>
+                    <td>{this.props.info_item.ten_san_pham + this.props.info_item.so_luot_xem}</td>
                     <td className="include_action_gio_hang">
                         <button type="button" class="btn btn-default" onClick={()=>{this.handleButtonClick('-')}}>-</button>
                         <input type="number" name="" readOnly={!this.state.is_edit} className="form-control number_input" value={this.props.info_item.so_luong} />
                         <button type="button" class="btn btn-default" onClick={()=>{this.handleButtonClick('+')}}>+</button>
                     </td>
-                    <td>{this.props.info_item.price}</td>
-                    <td>{this.props.info_item.price * this.props.info_item.so_luong}</td>
+                    <td>{this.props.info_item.don_gia}</td>
+                    <td>{this.props.info_item.don_gia * this.props.info_item.so_luong}</td>
                     <td>
                         <ButtonGroup aria-label="contained primary button group">
                             <Button variant="contained" style={{background: '#009900'}} size="small" color="primary" onClick={this.handleAllowEditOrNot}>

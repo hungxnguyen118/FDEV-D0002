@@ -33,7 +33,7 @@ class FormGioHang extends Component {
         console.log('run');
         var temp_array = this.state.mang_gio_hang;
         for(var i = 0; i < temp_array.length; i++){
-            if(id_san_pham == temp_array[i].id){
+            if(id_san_pham == temp_array[i].ma){
                 temp_array[i].so_luong = gia_tri;
                 this.setState({
                     mang_gio_hang: temp_array
@@ -47,7 +47,7 @@ class FormGioHang extends Component {
     handleRemoveItemCart(id_san_pham){
         var temp_array = this.state.mang_gio_hang;
         for(var i = 0; i < temp_array.length; i++){
-            if(id_san_pham == temp_array[i].id){
+            if(id_san_pham == temp_array[i].ma){
                 temp_array.splice(i, 1);
                 this.setState({
                     mang_gio_hang: temp_array
