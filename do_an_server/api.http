@@ -144,3 +144,11 @@ GET http://localhost:4000/dashboard/don-hang/2016
 
 ###
 GET http://localhost:4000/dashboard/don-hang-so-thang/2016
+
+
+###
+GET http://localhost:4000/products
+
+
+###
+GET http://localhost:4000/product/115

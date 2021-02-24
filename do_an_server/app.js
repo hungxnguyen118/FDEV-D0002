@@ -13,6 +13,8 @@ var moviesRouter = require('./routes/movies');
 var messageRouter = require('./routes/message');
 var dashboardRouter = require('./routes/dashboard');
 var uploadRouter = require('./routes/upload_file');
+var productsRouter = require('./routes/products');
+var productRouter = require('./routes/product');
 
 var app = express();
 
@@ -62,6 +64,8 @@ app.use('/movies', moviesRouter);
 app.use('/messages', messageRouter);
 app.use('/upload', uploadRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/products', productsRouter);
+app.use('/product', productRouter);
 
 
 // catch 404 and forward to error handler
