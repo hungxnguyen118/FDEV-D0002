@@ -7,13 +7,14 @@ import {
   Button,
   Card,
   CardContent,
-  CardHeader,
   Divider,
   useTheme,
   makeStyles,
-  colors
+  colors,
+  Select,
+  InputLabel,
+  MenuItem
 } from '@material-ui/core';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import axios from 'axios';
 
@@ -26,6 +27,10 @@ const ThongKeDonHang = ({ className, ...rest }) => {
   const theme = useTheme();
   const [numberDayOfMonth, setNumberOfMonth] = useState([]);
   const [data1, setData1] = useState([]);
+
+  const [year, setYear] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+  const [listyear] = useState([2016, 2017]);
 
   const data = {
     datasets: [
@@ -93,13 +98,13 @@ const ThongKeDonHang = ({ className, ...rest }) => {
     }
   };
 
-  useEffect(() => {
-    axios.get('http://localhost:4000/dashboard/don-hang-so-thang/2016')
+  const handleChangeDataChart = (paramyear) => {
+    axios.get(`http://localhost:4000/dashboard/don-hang-so-thang/${paramyear}`)
       .then((response) => {
         console.log(response);
         setNumberOfMonth(response.data);
 
-        axios.get('http://localhost:4000/dashboard/don-hang/2016')
+        axios.get(`http://localhost:4000/dashboard/don-hang/${paramyear}`)
           .then((response1) => {
             console.log(response1);
             setData1(response1.data);
@@ -111,6 +116,24 @@ const ThongKeDonHang = ({ className, ...rest }) => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const handleChange = (event) => {
+    setYear(event.target.value);
+
+    handleChangeDataChart(event.target.value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  useEffect(() => {
+    handleChangeDataChart(2016);
   }, []);
 
   return (
@@ -118,18 +141,24 @@ const ThongKeDonHang = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader
-        action={(
-          <Button
-            endIcon={<ArrowDropDownIcon />}
-            size="small"
-            variant="text"
-          >
-            Last 7 days
-          </Button>
-        )}
-        title="Latest"
-      />
+      <InputLabel id="demo-controlled-open-select-label">Age</InputLabel>
+      <Select
+        labelId="demo-controlled-open-select-label"
+        id="demo-controlled-open-select"
+        open={open}
+        onClose={handleClose}
+        onOpen={handleOpen}
+        value={year}
+        onChange={handleChange}
+      >
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        {listyear.map((itemyear) => {
+          return (<MenuItem value={itemyear}>{itemyear}</MenuItem>);
+        })}
+      </Select>
+      {year}
       <Divider />
       <CardContent>
         <Box
