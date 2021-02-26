@@ -152,3 +152,25 @@ GET http://localhost:4000/products
 
 ###
 GET http://localhost:4000/product/115
+
+
+###
+POST http://localhost:4000/don-hang/
+Content-Type: application/json
+
+{
+    "ho_ten": "Hùng Nguyễn",
+    "email": "hung@gmail.com",
+    "dien_thoai_nguoi_nhan": "090909090",
+    "dia_chi_nguoi_nhan": "290 Nam Ky khoi Nghia Q3, TPHCM",
+    "chi_tiet_don_hang": [
+        {
+            "ma_hoa_don": 95,
+            "ma_san_pham": 224,
+            "ten_san_pham": "Điện thoại Asus Zenfone 6 A601",
+            "so_luong": 15,
+            "don_gia": 5490000,
+            "thanh_tien": 82350000
+        }
+    ]
+}
