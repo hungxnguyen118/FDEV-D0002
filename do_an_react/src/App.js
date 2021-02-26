@@ -7,6 +7,7 @@ import TrangChu from './Pages/TrangChu';
 import TrangChiTietSanPham from './Pages/TrangChiTietSanPham';
 import TrangLienHe from './Pages/TrangLienHe';
 import TrangGioHang from './Pages/TrangGioHang';
+import TrangThanhToan from './Pages/TrangThanhToan';
 
 import Footer from './Module/Footer/Footer';
 
@@ -62,6 +63,10 @@ function App() {
 
           <Route path='/gio-hang'>
             <TrangGioHang />
+          </Route>
+
+          <Route path='/thanh-toan'>
+            <TrangThanhToan />
           </Route>
 
           <Route path='/test-material-ui'>
