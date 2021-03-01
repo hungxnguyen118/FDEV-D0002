@@ -25,6 +25,7 @@ import TrangTimKiem from './Pages/TrangTimKiem';
 import FormChat from './Module/FormChat';
 
 import UploadFile from './Module/UploadFile';
+import TrangTruyXuatDonHang from './Pages/TrangTruyXuatDonHang';
 
 
 function App() {
@@ -75,6 +76,10 @@ function App() {
 
           <Route path='/tim-kiem'>
             <TrangTimKiem />
+          </Route>
+
+          <Route path='/don-hang/:ma_truy_xuat_dh'>
+            <TrangTruyXuatDonHang />
           </Route>
 
           <Route path='/'>

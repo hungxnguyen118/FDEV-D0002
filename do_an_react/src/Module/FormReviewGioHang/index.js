@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ItemGioHang from './ItemGioHang';
 import { Redirect } from 'react-router-dom';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 class FormReviewGioHang extends Component {
 
@@ -77,6 +79,12 @@ class FormReviewGioHang extends Component {
                             )}
                         </tbody>
                     </table>
+                </div>
+
+                <div>
+                    <Link to="/gio-hang">
+                        <Button variant="contained" color="primary">Quay lại</Button>
+                    </Link>
                 </div>
                 
             </div>

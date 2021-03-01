@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ItemGioHang from './ItemGioHang';
 import { Redirect } from 'react-router-dom';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+
 
 class FormGioHang extends Component {
 
@@ -111,6 +114,12 @@ class FormGioHang extends Component {
                             )}
                         </tbody>
                     </table>
+
+                    <div>
+                        <Link to="/thanh-toan">
+                            <Button variant="contained" color="primary">Thanh Toán</Button>
+                        </Link>
+                    </div>
                 </div>
                 
             </div>
