@@ -31090,3 +31090,37 @@
 -200-{"xu_ly":"thêm user mới","data_send":{"ho_ten":"Hùng","email":"hungnguyenxuan118@gmail.com","dien_thoai_nguoi_nhan":"0909090909090","dia_chi_nguoi_nhan":"123456 Nam Kỳ Khởi Nghĩa","chi_tiet_don_hang":[{"ma_san_pham":115,"ten_san_pham":"Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)","so_luong":2,"don_gia":1120000,"thanh_tien":2240000}]}}
 1614346914099-POST-/don-hang/
 -200-{"xu_ly":"thêm user mới","data_send":{"ho_ten":"Hùng","email":"hungnguyenxuan118@gmail.com","dien_thoai_nguoi_nhan":"0909090909090","dia_chi_nguoi_nhan":"123456 Nam Kỳ Khởi Nghĩa","chi_tiet_don_hang":[{"ma_san_pham":115,"ten_san_pham":"Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)","so_luong":2,"don_gia":1120000,"thanh_tien":2240000}]}}
+1614598585296-GET-/images/san_pham/undefined
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598585372-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598585461-GET-/products
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598585467-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598585506-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598932117-GET-/product/79
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598932127-GET-/images/san_pham/undefined
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598932128-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598932183-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614598932196-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614602443566-POST-/don-hang/
+-200-{"xu_ly":"thêm user mới","data_send":{"ho_ten":"Sơn Gầy","email":"songay@gmail.com","dien_thoai_nguoi_nhan":"0905454845","dia_chi_nguoi_nhan":"123 Nguyen Thi Minh Khai","chi_tiet_don_hang":[{"ma_san_pham":115,"ten_san_pham":"Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)","so_luong":2,"don_gia":1120000,"thanh_tien":2240000},{"ma_san_pham":79,"ten_san_pham":"ASUS 512MB DDR2 ATi Radeon HD4350","so_luong":1,"don_gia":828000,"thanh_tien":828000}]}}
+1614602521956-POST-/don-hang/
+-200-{"xu_ly":"thêm user mới","data_send":{"ho_ten":"Sơn Gầy","email":"songay@gmail.com","dien_thoai_nguoi_nhan":"0905454845","dia_chi_nguoi_nhan":"123 Nguyen Thi Minh Khai","chi_tiet_don_hang":[{"ma_san_pham":115,"ten_san_pham":"Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)","so_luong":2,"don_gia":1120000,"thanh_tien":2240000},{"ma_san_pham":79,"ten_san_pham":"ASUS 512MB DDR2 ATi Radeon HD4350","so_luong":1,"don_gia":828000,"thanh_tien":828000}]}}
+1614603166646-GET-/don-hang/abcd_000000000107
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614603515299-GET-/images/send_message.png
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614603515373-GET-/messages
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614603515406-GET-/fonts/glyphicons-halflings-regular.woff2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1614603624186-GET-/don-hang/abcd_000000000107
+-200-{"xu_ly":"thêm user mới","data_send":{}}

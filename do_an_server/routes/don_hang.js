@@ -102,25 +102,49 @@ router.post('/', function(req, res, next) {
 
                                 if(index == req.body.chi_tiet_don_hang.length - 1){
 
-                                    var mailOptions = {
-                                        from: 'hungbookstoreonline@gmail.com',
-                                        to: req.body.email,
-                                        subject: 'Cám ơn bạn đã đặt hàng tại Shop Online',
-                                        //text: html_string
-                                        html: html_string
-                                    };
+                                    var ma_truy_xuat_dh = 'abcd_' + String(results.insertId).padStart(12, '0');
 
-                                    transporter.sendMail(mailOptions, function(error, info){
-                                        if (error) {
-                                          console.log(error);
-                                        } else {
-                                          console.log('Email sent: ' + info.response);
+                                    connection.query('UPDATE hoa_don SET ma_truy_xuat_dh = ? WHERE ma = ?',
+                                        [
+                                            ma_truy_xuat_dh,
+                                            results.insertId
+                                        ],
+                                        function(err_update, results_update, fields){
+                                            if (err_update){
+                                                res.json({
+                                                    error: true,
+                                                    error_message: "Tạo mã truy xuất thất bại"
+                                                });
+            
+                                                throw err_child;
+                                            }
+
+                                            html_string += `
+                                                <div>Bạn mua đơn hàng: <a href="http://localhost:3000/don-hang/${ma_truy_xuat_dh}">${ma_truy_xuat_dh}</a></div>
+                                            `
+
+                                            // var mailOptions = {
+                                            //     from: 'hungbookstoreonline@gmail.com',
+                                            //     to: req.body.email,
+                                            //     subject: 'Cám ơn bạn đã đặt hàng tại Shop Online',
+                                            //     //text: html_string
+                                            //     html: html_string
+                                            // };
+
+                                            // transporter.sendMail(mailOptions, function(error, info){
+                                            //     if (error) {
+                                            //       console.log(error);
+                                            //     } else {
+                                            //       console.log('Email sent: ' + info.response);
+                                            //     }
+                                            // }); 
+                                            console.log(html_string);
+        
+                                            connection.release();
+        
+                                            res.json(results);
                                         }
-                                    });  
-
-                                    connection.release();
-
-                                    res.json(results);
+                                    )
 
                                 }
                             }
@@ -137,6 +161,24 @@ router.post('/', function(req, res, next) {
     //res.json([]);
     
 });
+
+
+router.get('/:ma_truy_xuat_dh', function(req, res, next){
+    pool.getConnection(function(err, connection) {
+        connection.query('SELECT * FROM hoa_don WHERE ma_truy_xuat_dh = ?',
+            [req.params.ma_truy_xuat_dh],
+            function(err, result, field){
+                if(err){
+                    console.log(err);
+                    throw err;
+                }
+
+                res.json(result);
+            }
+        )
+    });
+    
+})
 
 
 module.exports = router;
