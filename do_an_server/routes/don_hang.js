@@ -181,4 +181,55 @@ router.get('/:ma_truy_xuat_dh', function(req, res, next){
 })
 
 
+router.get('/tim-kiem/:chuoi_tim', function(req, res, next){
+    pool.getConnection(function(err, connection) {
+        connection.query(`SELECT hd.*, ten_san_pham, don_gia, so_luong, thanh_tien 
+        FROM hoa_don hd 
+        JOIN chi_tiet_hoa_don cthd
+        ON hd.ma = cthd.ma_hoa_don
+        WHERE ma_truy_xuat_dh LIKE ?`,
+            ['%' + req.params.chuoi_tim + '%'],
+            function(err, result, field){
+                if(err){
+                    console.log(err);
+                    throw err;
+                }
+
+                var array_result = [];
+
+                result.forEach((item, index) => {
+                    if(array_result[item.ma]){
+                        var thong_tin_san_pham = {
+                            ten_san_pham: item.ten_san_pham,
+                            so_luong: item.so_luong,
+                            don_gia: item.don_gia,
+                            thanh_tien: item.thanh_tien,
+                        };
+
+                        array_result[item.ma].list_san_pham.push(thong_tin_san_pham);
+                    }
+                    else{
+                        var thong_tin_san_pham = {
+                            ten_san_pham: item.ten_san_pham,
+                            so_luong: item.so_luong,
+                            don_gia: item.don_gia,
+                            thanh_tien: item.thanh_tien,
+                        };
+
+                        item.list_san_pham = [
+                            thong_tin_san_pham
+                        ];;
+                        array_result[item.ma] = item;
+
+                    }
+                });
+
+                res.json(array_result.filter(item => item));
+            }
+        )
+    });
+    
+})
+
+
 module.exports = router;

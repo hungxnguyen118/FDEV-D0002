@@ -147,7 +147,7 @@ GET http://localhost:4000/dashboard/don-hang-so-thang/2016
 
 
 ###
-GET http://localhost:4000/products
+GET http://localhost:4000/products/?limit=4
 
 
 ###
@@ -178,3 +178,6 @@ Content-Type: application/json
 
 ###
 GET http://localhost:4000/don-hang/abcd_000000000107
+
+###
+GET http://localhost:4000/don-hang/tim-kiem/abcd_00000000010
