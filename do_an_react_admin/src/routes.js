@@ -14,6 +14,8 @@ import TestComponent from 'src/views/test/CustomerListView';
 import UserListView from 'src/views/users/UserListView';
 import FormUsersAdd from 'src/views/users/FormUsersAdd';
 import FormUserEdit from 'src/views/users/FormUserEdit';
+import QuanLySanPham from 'src/views/products/ProductListView';
+import TruyXuatDonHang from 'src/views/truyxuatdonhang';
 
 const routes = [
   {
@@ -30,6 +32,8 @@ const routes = [
       { path: 'users', element: <UserListView /> },
       { path: 'users/:id_user', element: <FormUserEdit /> },
       { path: 'users/them', element: <FormUsersAdd /> },
+      { path: 'quan-ly-san-pham', element: <QuanLySanPham /> },
+      { path: 'truy-xuat-don-hang', element: <TruyXuatDonHang /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },

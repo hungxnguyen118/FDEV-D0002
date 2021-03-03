@@ -22,6 +22,7 @@ import {
   UserPlus as UserPlusIcon,
   Users as UsersIcon
 } from 'react-feather';
+import ReceiptIcon from '@material-ui/icons/Receipt';
 import NavItem from './NavItem';
 
 const user = {
@@ -35,6 +36,11 @@ const items = [
     href: '/app/dashboard',
     icon: BarChartIcon,
     title: 'Dashboard'
+  },
+  {
+    href: '/app/truy-xuat-don-hang',
+    icon: ReceiptIcon,
+    title: 'Truy Xuất Đơn Hàng'
   },
   {
     href: '/app/customers',
@@ -75,6 +81,11 @@ const items = [
     href: '/app/test',
     icon: UserPlusIcon,
     title: 'Test'
+  },
+  {
+    href: '/app/quan-ly-san-pham',
+    icon: ShoppingBagIcon,
+    title: 'Quản lý sản phẩm'
   },
   {
     href: '/404',
