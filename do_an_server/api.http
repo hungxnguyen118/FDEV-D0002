@@ -181,3 +181,21 @@ GET http://localhost:4000/don-hang/abcd_000000000107
 
 ###
 GET http://localhost:4000/don-hang/tim-kiem/abcd_00000000010
+
+
+###
+POST http://localhost:4000/user/admin-log-in
+Content-Type: application/json
+
+{
+    "ten_dang_nhap":"tuan",
+    "mat_khau":"123456"
+}
+
+
+###
+POST http://localhost:4000/user/admin-authorized
+Content-Type: application/json
+Authorization: Basic aHVuZ25ndXllbnh1YW4xMThAZ21haWwuY29tYWRtaW42ZGM5NWRmMi1mNzE3LTQxOTUtOGI4Ni1jNzI5YTE0YTUzZjk=
+
+{}
