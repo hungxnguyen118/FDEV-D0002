@@ -18,11 +18,35 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const CustomerListView = () => {
+const CustomerListView = ({ ...rest }) => {
   const classes = useStyles();
   const [products, setProduct] = useState([]);
 
   useEffect(() => {
+    const arraytest = [
+      {
+        id: 1,
+        alias: 'truy-xuat-don-hang',
+        ten_menu: 'Truy Xuất Đơn Hàng',
+        type_menu: 'read'
+      }
+    ];
+
+    let booleantest = false;
+    for (let i = 0; i < arraytest.length; i++) {
+      if (arraytest[i].alias === rest.alias) {
+        console.log(arraytest[i].alias, rest.alias);
+        booleantest = true;
+        break;
+      }
+    }
+
+    if (booleantest) {
+      console.log('do nothing');
+    } else {
+      alert('you don\'t have permission');
+    }
+
     axios.get('http://localhost:4000/products/')
       .then((response) => {
         console.log(response);

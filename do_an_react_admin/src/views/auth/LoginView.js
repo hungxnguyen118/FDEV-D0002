@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -15,6 +15,8 @@ import {
 import FacebookIcon from 'src/icons/Facebook';
 import GoogleIcon from 'src/icons/Google';
 import Page from 'src/components/Page';
+import { useCookies } from 'react-cookie';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,9 +27,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const LoginView = () => {
+const LoginView = ({ ...rest }) => {
+  const [cookies, setCookie] = useCookies(['token']);
   const classes = useStyles();
   const navigate = useNavigate();
+  const [isSubmitting, setisSubmitting] = useState(false);
+
+  useEffect(() => {
+    console.log(cookies);
+  }, []);
 
   return (
     <Page
@@ -50,8 +58,36 @@ const LoginView = () => {
               email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
               password: Yup.string().max(255).required('Password is required')
             })}
-            onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+            onSubmit={(element) => {
+              console.log(element);
+              setisSubmitting(true);
+              axios.post('http://localhost:4000/user/admin-log-in', {
+                ten_dang_nhap: element.email,
+                mat_khau: element.password
+              })
+                .then((response) => {
+                  console.log(response);
+
+                  if (response.data.error) {
+                    alert(response.data.message);
+                  } else {
+                    setCookie('token', response.data.token, {
+                      path: '/',
+                      maxAge: 30 * 86400
+                    });
+                    rest.processLogedInState(true);
+                    setTimeout(() => {
+                      navigate('/app/dashboard', { replace: true });
+                    }, 20);
+                  }
+
+                  setisSubmitting(false);
+                })
+                .catch((err) => {
+                  console.log(err);
+
+                  setisSubmitting(false);
+                });
             }}
           >
             {({
@@ -59,7 +95,6 @@ const LoginView = () => {
               handleBlur,
               handleChange,
               handleSubmit,
-              isSubmitting,
               touched,
               values
             }) => (
