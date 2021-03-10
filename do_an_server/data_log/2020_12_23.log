@@ -31330,3 +31330,219 @@
 -200-{"xu_ly":"thêm user mới","data_send":{}}
 1615212696608-POST-/user/admin-authorized
 -200-{"xu_ly":"thêm user mới","data_send":{}}
+1615374181036-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615374181273-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615375822515-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615375834317-GET-/users/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615375840755-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615375848907-GET-/don-hang/tim-kiem/abcd_00000000010
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615376052424-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615376052493-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615377224549-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615377224650-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615377416234-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615377486795-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615377584979-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615377803942-GET-/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615377804055-GET-/favicon.ico
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615377813430-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615377814823-GET-/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615377844412-GET-/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615378407970-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378462964-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378463625-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378464097-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378464313-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378464538-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378464777-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378699519-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615378707133-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379111963-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379337917-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379404598-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379484828-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379584317-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379592099-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379618860-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615379932492-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615379932614-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615380224144-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615380224198-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615381376703-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615381404109-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"dsfdsfdsfds"}}
+1615381658594-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615381761085-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615381825995-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"test@devias.io","mat_khau":"123456789"}}
+1615381984729-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"demo@devias.io","mat_khau":"Password123"}}
+1615382073309-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan","mat_khau":"123456"}}
+1615382085410-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"hungnguyenxuan118@gmail.com","mat_khau":"123456"}}
+1615382092879-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"hungnguyenxuan118@gmail.com","mat_khau":"asdasdasdas"}}
+1615382127616-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"hungnguyenxuan118@gmail.com","mat_khau":"123456"}}
+1615382822395-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615382822515-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615382846882-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615382846963-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615382867385-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"hungnguyenxuan118@gmail.com","mat_khau":"123456"}}
+1615382867715-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615382867804-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615383876303-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615383876307-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615383876387-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384009514-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384066567-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan@yahoo.com","mat_khau":"123456"}}
+1615384067034-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384067040-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384067107-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384067120-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384077626-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384077629-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384077708-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384445724-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384445727-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384445804-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384454714-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384454717-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384454805-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384930105-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384930217-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384958569-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"hungnguyenxuan118@gmail.com","mat_khau":"123456"}}
+1615384958887-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615384958938-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385045824-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"hungnguyenxuan118@gmail.com","mat_khau":"123456"}}
+1615385046124-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385046131-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385046254-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385137505-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385231432-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385233998-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385234002-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385234076-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385243465-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385243468-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385243541-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385278289-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385395895-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385398758-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385399840-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385403105-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385583953-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385583956-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615385584083-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386000435-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386025779-POST-/user/admin-log-in
+-200-{"xu_ly":"thêm user mới","data_send":{"ten_dang_nhap":"tuan@yahoo.com","mat_khau":"123456"}}
+1615386026058-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386026062-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386026179-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386032877-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386032880-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386086652-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386086655-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615386112013-GET-/products/
+-200-{"xu_ly":"thêm user mới","data_send":{}}

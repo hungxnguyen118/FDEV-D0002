@@ -8,6 +8,8 @@ var mysql = require('mysql');
 const { v4: uuidv4 } = require('uuid');
 var base64 = require('base-64');
 
+var Cookies = require('cookies');
+
 var pool  = mysql.createPool({
     connectionLimit : 10,
     host            : 'localhost',
@@ -190,13 +192,27 @@ router.delete('/:id_user', authenticate.auth, (req, res) => {
 
 
 router.post('/admin-log-in', (req, res) => {
+    var keys = ['keyboard cat'];
+
+    var cookies = new Cookies(req, res, { keys: keys });
+
+    var lastVisit = cookies.get('LastVisit', { signed: true })
+
+    cookies.set('LastVisit', (new Date(new Date().getTime()+(30*24*60*60*1000))).toISOString(), { signed: true });
+
     console.log(req.body);
+
+    if (!lastVisit) {
+        console.log('nothing here');
+    } else {
+        console.log(lastVisit);
+    }
 
     pool.getConnection(function(err, connection) {
         if (err) throw err; // not connected!
        
         // Use the connection
-        connection.query(`SELECT * FROM nguoi_dung WHERE ten_dang_nhap = ?`, [req.body.ten_dang_nhap], function (error, results, fields) {
+        connection.query(`SELECT * FROM nguoi_dung WHERE ten_dang_nhap = ? OR email = ?`, [req.body.ten_dang_nhap, req.body.ten_dang_nhap], function (error, results, fields) {
           // Handle error after the release.
           if (error) throw error;
 
