@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Feb 24, 2021 at 08:49 AM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Host: 127.0.0.1
+-- Generation Time: Mar 15, 2021 at 02:07 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,9 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `bai_viet`
 --
 
-DROP TABLE IF EXISTS `bai_viet`;
-CREATE TABLE IF NOT EXISTS `bai_viet` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `bai_viet` (
+  `ma` int(11) NOT NULL,
   `ma_loai` int(11) DEFAULT NULL,
   `ma_nguoi_dung` int(11) NOT NULL,
   `tieu_de` varchar(200) CHARACTER SET utf8 NOT NULL,
@@ -38,13 +37,8 @@ CREATE TABLE IF NOT EXISTS `bai_viet` (
   `ngay_tao` datetime NOT NULL,
   `so_lan_xem` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL,
-  `hinh` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`),
-  KEY `ma_the_loai` (`ma_loai`),
-  KEY `ma_tac_gia` (`ma_nguoi_dung`),
-  KEY `ma_the_loai_2` (`ma_loai`),
-  KEY `ma_tac_gia_2` (`ma_nguoi_dung`)
-) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+  `hinh` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `bai_viet`
@@ -93,14 +87,12 @@ INSERT INTO `bai_viet` (`ma`, `ma_loai`, `ma_nguoi_dung`, `tieu_de`, `noi_dung_t
 -- Table structure for table `bang_bao_gia`
 --
 
-DROP TABLE IF EXISTS `bang_bao_gia`;
-CREATE TABLE IF NOT EXISTS `bang_bao_gia` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `bang_bao_gia` (
+  `ma` int(11) NOT NULL,
   `tieu_de` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `ten_file` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `trang_thai` tinyint(4) NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `trang_thai` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `bang_bao_gia`
@@ -115,17 +107,15 @@ INSERT INTO `bang_bao_gia` (`ma`, `tieu_de`, `ten_file`, `trang_thai`) VALUES
 -- Table structure for table `banner_quang_cao`
 --
 
-DROP TABLE IF EXISTS `banner_quang_cao`;
-CREATE TABLE IF NOT EXISTS `banner_quang_cao` (
-  `ma` tinyint(4) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `banner_quang_cao` (
+  `ma` tinyint(4) NOT NULL,
   `link` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `tieu_de` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `loai` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `thu_tu_hien_thi` tinyint(4) NOT NULL,
   `vi_tri` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `hinh` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `trang_thai` tinyint(4) NOT NULL,
-  PRIMARY KEY (`ma`)
+  `trang_thai` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -134,15 +124,13 @@ CREATE TABLE IF NOT EXISTS `banner_quang_cao` (
 -- Table structure for table `bo_dem`
 --
 
-DROP TABLE IF EXISTS `bo_dem`;
-CREATE TABLE IF NOT EXISTS `bo_dem` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `bo_dem` (
+  `ma` int(11) NOT NULL,
   `dia_chi_ip` int(20) NOT NULL,
   `trinh_duyet` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `thoi_gian` datetime NOT NULL,
-  `url` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=6825 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `url` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `bo_dem`
@@ -7000,18 +6988,16 @@ INSERT INTO `bo_dem` (`ma`, `dia_chi_ip`, `trinh_duyet`, `thoi_gian`, `url`) VAL
 -- Table structure for table `cau_hinh`
 --
 
-DROP TABLE IF EXISTS `cau_hinh`;
-CREATE TABLE IF NOT EXISTS `cau_hinh` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cau_hinh` (
+  `ma` int(11) NOT NULL,
   `tieu_de` varchar(200) CHARACTER SET utf8 NOT NULL,
   `noi_dung_tom_tat` text CHARACTER SET utf8 NOT NULL,
   `noi_dung_chi_tiet` text CHARACTER SET utf8 NOT NULL,
   `ngay_tao` datetime NOT NULL,
   `so_lan_xem` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL,
-  `hinh` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+  `hinh` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `cau_hinh`
@@ -7028,17 +7014,15 @@ INSERT INTO `cau_hinh` (`ma`, `tieu_de`, `noi_dung_tom_tat`, `noi_dung_chi_tiet`
 -- Table structure for table `chi_tiet_hoa_don`
 --
 
-DROP TABLE IF EXISTS `chi_tiet_hoa_don`;
-CREATE TABLE IF NOT EXISTS `chi_tiet_hoa_don` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `chi_tiet_hoa_don` (
+  `ma` int(11) NOT NULL,
   `ma_hoa_don` int(11) NOT NULL,
   `ma_san_pham` int(11) NOT NULL,
   `ten_san_pham` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `so_luong` int(11) NOT NULL,
   `don_gia` int(11) NOT NULL,
-  `thanh_tien` int(11) NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=205 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `thanh_tien` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `chi_tiet_hoa_don`
@@ -7058,7 +7042,15 @@ INSERT INTO `chi_tiet_hoa_don` (`ma`, `ma_hoa_don`, `ma_san_pham`, `ten_san_pham
 (201, 96, 223, 'Điện thoại Asus Zenfone 2 2.3Ghz/4G/64G', 50, 7490000, 374500000),
 (202, 97, 218, 'Máy tính bảng iPad Air Wifi 16GB', 35, 9590000, 335650000),
 (203, 97, 213, 'PC Acer AS - XC603 (DT.SUMSV - 002) J2900', 23, 5680000, 130640000),
-(204, 97, 217, 'Laptop Asus TP550LA 34034G50W8T (CJ090H)', 65, 11590000, 753350000);
+(204, 97, 217, 'Laptop Asus TP550LA 34034G50W8T (CJ090H)', 65, 11590000, 753350000),
+(206, 101, 115, 'Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)', 2, 1120000, 2240000),
+(207, 102, 115, 'Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)', 2, 1120000, 2240000),
+(208, 104, 115, 'Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)', 2, 1120000, 2240000),
+(209, 105, 115, 'Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)', 2, 1120000, 2240000),
+(210, 106, 115, 'Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)', 2, 1120000, 2240000),
+(211, 106, 79, 'ASUS 512MB DDR2 ATi Radeon HD4350', 1, 828000, 828000),
+(212, 107, 115, 'Linksys ADSL2 4 Port Ethernet/ Router/ Gateway/ Firewall (AG241)', 2, 1120000, 2240000),
+(213, 107, 79, 'ASUS 512MB DDR2 ATi Radeon HD4350', 1, 828000, 828000);
 
 -- --------------------------------------------------------
 
@@ -7066,13 +7058,11 @@ INSERT INTO `chi_tiet_hoa_don` (`ma`, `ma_hoa_don`, `ma_san_pham`, `ten_san_pham
 -- Table structure for table `cuoc_phi_van_chuyen`
 --
 
-DROP TABLE IF EXISTS `cuoc_phi_van_chuyen`;
-CREATE TABLE IF NOT EXISTS `cuoc_phi_van_chuyen` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cuoc_phi_van_chuyen` (
+  `ma` int(11) NOT NULL,
   `noi_den` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `cuoc_phi` int(11) NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `cuoc_phi` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cuoc_phi_van_chuyen`
@@ -7091,9 +7081,9 @@ INSERT INTO `cuoc_phi_van_chuyen` (`ma`, `noi_den`, `cuoc_phi`) VALUES
 -- Table structure for table `hoa_don`
 --
 
-DROP TABLE IF EXISTS `hoa_don`;
-CREATE TABLE IF NOT EXISTS `hoa_don` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `hoa_don` (
+  `ma` int(11) NOT NULL,
+  `ma_truy_xuat_dh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `ho_ten` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `gioi_tinh` tinyint(4) NOT NULL,
   `ngay_sinh` date NOT NULL,
@@ -7106,18 +7096,22 @@ CREATE TABLE IF NOT EXISTS `hoa_don` (
   `tong_tien` int(11) NOT NULL,
   `ho_ten_nguoi_nhan` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `dia_chi_nguoi_nhan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `dien_thoai_nguoi_nhan` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `dien_thoai_nguoi_nhan` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `hoa_don`
 --
 
-INSERT INTO `hoa_don` (`ma`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `email`, `dia_chi`, `dien_thoai`, `ngay_tao`, `trang_thai`, `ghi_chu`, `tong_tien`, `ho_ten_nguoi_nhan`, `dia_chi_nguoi_nhan`, `dien_thoai_nguoi_nhan`) VALUES
-(95, 'Hùng Nguyễn Xuân', 1, '1992-08-11', 'hungmavuong66@yahoo.com', '357 Lê Hồng Phong, Quận 10, TPHCM', 909090990, '2015-08-14 08:40:29', 1, '', 197960000, 'Hùng Nguyễn Xuân', '357 Lê Hồng Phong, Quận 10, TPHCM', '0909090990'),
-(96, 'Hùng Nguyễn Xuân', 1, '1992-08-11', 'hungmavuong66@yahoo.com', '357 Lê Hồng Phong, Quận 10, TPHCM', 2147483647, '2015-08-14 08:53:49', 1, '', 521300000, 'Hùng Nguyễn Xuân', '357 Lê Hồng Phong, Quận 10, TPHCM', '990909090909'),
-(97, 'Hùng Nguyễn Xuân', 1, '1992-08-11', 'hungmavuong66@yahoo.com', '357 Lê Hồng Phong, Quận 10, TPHCM', 2147483647, '2015-08-14 08:55:17', 1, '', 1219640000, 'Hùng Nguyễn Xuân', '357 Lê Hồng Phong, Quận 10, TPHCM', '990909090909');
+INSERT INTO `hoa_don` (`ma`, `ma_truy_xuat_dh`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `email`, `dia_chi`, `dien_thoai`, `ngay_tao`, `trang_thai`, `ghi_chu`, `tong_tien`, `ho_ten_nguoi_nhan`, `dia_chi_nguoi_nhan`, `dien_thoai_nguoi_nhan`) VALUES
+(95, 'abcd_000000000095', 'Hùng Nguyễn Xuân', 1, '1992-08-11', 'hungmavuong66@yahoo.com', '357 Lê Hồng Phong, Quận 10, TPHCM', 909090990, '2015-08-14 08:40:29', 1, '', 197960000, 'Hùng Nguyễn Xuân', '357 Lê Hồng Phong, Quận 10, TPHCM', '0909090990'),
+(96, 'abcd_000000000096', 'Hùng Nguyễn Xuân', 1, '1992-08-11', 'hungmavuong66@yahoo.com', '357 Lê Hồng Phong, Quận 10, TPHCM', 2147483647, '2015-08-14 08:53:49', 1, '', 521300000, 'Hùng Nguyễn Xuân', '357 Lê Hồng Phong, Quận 10, TPHCM', '990909090909'),
+(97, 'abcd_000000000097', 'Hùng Nguyễn Xuân', 1, '1992-08-11', 'hungmavuong66@yahoo.com', '357 Lê Hồng Phong, Quận 10, TPHCM', 2147483647, '2015-08-14 08:55:17', 1, '', 1219640000, 'Hùng Nguyễn Xuân', '357 Lê Hồng Phong, Quận 10, TPHCM', '990909090909'),
+(101, 'abcd_000000000101', 'Hùng', 1, '2020-01-01', 'hungnguyenxuan118@gmail.com', '123456 Nam Kỳ Khởi Nghĩa', 2147483647, '2020-02-26 00:00:00', 1, '', 2240000, 'Hùng', '123456 Nam Kỳ Khởi Nghĩa', '0909090909090'),
+(102, 'abcd_000000000102', 'Hùng', 1, '2020-01-01', 'hungnguyenxuan118@gmail.com', '123456 Nam Kỳ Khởi Nghĩa', 2147483647, '2020-02-26 00:00:00', 1, '', 2240000, 'Hùng', '123456 Nam Kỳ Khởi Nghĩa', '0909090909090'),
+(104, 'abcd_000000000104', 'Hùng', 1, '2020-01-01', 'hungnguyenxuan118@gmail.com', '123456 Nam Kỳ Khởi Nghĩa', 2147483647, '2020-02-26 00:00:00', 1, '', 2240000, 'Hùng', '123456 Nam Kỳ Khởi Nghĩa', '0909090909090'),
+(105, 'abcd_000000000105', 'Hùng', 1, '2020-01-01', 'hungnguyenxuan118@gmail.com', '123456 Nam Kỳ Khởi Nghĩa', 2147483647, '2020-02-26 00:00:00', 1, '', 2240000, 'Hùng', '123456 Nam Kỳ Khởi Nghĩa', '0909090909090'),
+(107, 'abcd_000000000107', 'Sơn Gầy', 1, '2020-01-01', 'songay@gmail.com', '123 Nguyen Thi Minh Khai', 905454845, '2020-02-26 00:00:00', 1, '', 3068000, 'Sơn Gầy', '123 Nguyen Thi Minh Khai', '0905454845');
 
 -- --------------------------------------------------------
 
@@ -7125,16 +7119,14 @@ INSERT INTO `hoa_don` (`ma`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `email`, `dia_c
 -- Table structure for table `ho_tro_truc_tuyen`
 --
 
-DROP TABLE IF EXISTS `ho_tro_truc_tuyen`;
-CREATE TABLE IF NOT EXISTS `ho_tro_truc_tuyen` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ho_tro_truc_tuyen` (
+  `ma` int(11) NOT NULL,
   `ho_ten` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `loai_ho_tro` tinyint(4) NOT NULL,
   `nick_chat` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `trang_thai` tinyint(4) NOT NULL,
-  `thu_tu_hien_thi` int(11) NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `thu_tu_hien_thi` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `ho_tro_truc_tuyen`
@@ -7150,16 +7142,14 @@ INSERT INTO `ho_tro_truc_tuyen` (`ma`, `ho_ten`, `loai_ho_tro`, `nick_chat`, `tr
 -- Table structure for table `lien_he`
 --
 
-DROP TABLE IF EXISTS `lien_he`;
-CREATE TABLE IF NOT EXISTS `lien_he` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `lien_he` (
+  `ma` int(11) NOT NULL,
   `ho_ten` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `tieu_de` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `noi_dung` text COLLATE utf8_unicode_ci NOT NULL,
-  `ngay_tao` datetime NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `ngay_tao` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `lien_he`
@@ -7174,15 +7164,13 @@ INSERT INTO `lien_he` (`ma`, `ho_ten`, `email`, `tieu_de`, `noi_dung`, `ngay_tao
 -- Table structure for table `loai_bai_viet`
 --
 
-DROP TABLE IF EXISTS `loai_bai_viet`;
-CREATE TABLE IF NOT EXISTS `loai_bai_viet` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `loai_bai_viet` (
+  `ma` int(11) NOT NULL,
   `ten` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `mo_ta` text COLLATE utf8_unicode_ci,
+  `mo_ta` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `ma_loai_cha` int(11) DEFAULT NULL,
-  `thu_tu_hien_thi` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=209 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `thu_tu_hien_thi` int(11) NOT NULL DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `loai_bai_viet`
@@ -7206,15 +7194,13 @@ INSERT INTO `loai_bai_viet` (`ma`, `ten`, `mo_ta`, `ma_loai_cha`, `thu_tu_hien_t
 -- Table structure for table `loai_san_pham`
 --
 
-DROP TABLE IF EXISTS `loai_san_pham`;
-CREATE TABLE IF NOT EXISTS `loai_san_pham` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `loai_san_pham` (
+  `ma` int(11) NOT NULL,
   `ten` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `mo_ta` text COLLATE utf8_unicode_ci,
+  `mo_ta` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `ma_loai_cha` int(11) NOT NULL,
-  `thu_tu_hien_thi` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=212 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `thu_tu_hien_thi` int(11) NOT NULL DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `loai_san_pham`
@@ -7293,9 +7279,8 @@ INSERT INTO `loai_san_pham` (`ma`, `ten`, `mo_ta`, `ma_loai_cha`, `thu_tu_hien_t
 -- Table structure for table `member`
 --
 
-DROP TABLE IF EXISTS `member`;
-CREATE TABLE IF NOT EXISTS `member` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `member` (
+  `ma` int(11) NOT NULL,
   `ho_ten` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `mat_khau` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -7304,9 +7289,8 @@ CREATE TABLE IF NOT EXISTS `member` (
   `dien_thoai` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `ten_cong_ty` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `ma_so_thue` int(11) NOT NULL,
-  `trang_thai` int(11) NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `trang_thai` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `member`
@@ -7324,9 +7308,8 @@ INSERT INTO `member` (`ma`, `ho_ten`, `username`, `mat_khau`, `dia_chi`, `email`
 -- Table structure for table `menu`
 --
 
-DROP TABLE IF EXISTS `menu`;
-CREATE TABLE IF NOT EXISTS `menu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
   `trang_thai` tinyint(4) DEFAULT NULL,
@@ -7335,9 +7318,8 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `order_by` int(11) DEFAULT NULL,
   `loai_sp_id` int(11) DEFAULT NULL,
   `loai_menu` varchar(255) NOT NULL,
-  `views_menu` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+  `views_menu` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menu`
@@ -7395,30 +7377,52 @@ INSERT INTO `menu` (`id`, `title`, `link`, `trang_thai`, `alias`, `parent_id`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `menu_quan_tri`
+--
+
+CREATE TABLE `menu_quan_tri` (
+  `id` int(11) NOT NULL,
+  `alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ten_menu` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type_menu` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `menu_quan_tri`
+--
+
+INSERT INTO `menu_quan_tri` (`id`, `alias`, `ten_menu`, `type_menu`) VALUES
+(1, 'truy-xuat-don-hang', 'Truy Xuất Đơn Hàng', 'read'),
+(2, 'quan-ly-san-pham', 'Quản Lý Sản Phẩm', 'read'),
+(3, 'phan-quyen', 'Phân Quyền', 'read'),
+(4, 'tin-tuc', 'Tin Tức', 'read'),
+(5, 'quan-ly-san-pham', 'Quản Lý Sản Phẩm', 'read');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nguoi_dung`
 --
 
-DROP TABLE IF EXISTS `nguoi_dung`;
-CREATE TABLE IF NOT EXISTS `nguoi_dung` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
-  `ma_nguoi_dung` int(11) NOT NULL,
+CREATE TABLE `nguoi_dung` (
+  `ma` int(11) NOT NULL,
+  `ma_quyen` int(11) NOT NULL,
   `ho_ten` varchar(100) CHARACTER SET utf8 NOT NULL,
   `ten_dang_nhap` varchar(100) CHARACTER SET utf8 NOT NULL,
   `mat_khau` varchar(100) CHARACTER SET utf8 NOT NULL,
   `email` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `ngay_tao` datetime DEFAULT NULL,
   `lan_dang_nhap_cuoi` datetime DEFAULT NULL,
-  `trang_thai` tinyint(4) NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `trang_thai` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `nguoi_dung`
 --
 
-INSERT INTO `nguoi_dung` (`ma`, `ma_nguoi_dung`, `ho_ten`, `ten_dang_nhap`, `mat_khau`, `email`, `ngay_tao`, `lan_dang_nhap_cuoi`, `trang_thai`) VALUES
-(2, 0, 'Hùng Nguyễn', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'hungnguyenxuan118@gmail.com', '2012-03-14 00:00:00', '2011-11-21 00:34:01', 1),
-(6, 4, 'tuan', 'tuan', 'd6b8cc42803ea100735c719f1d7f5e11', 'tuan@yahoo.com', '1212-03-15 11:36:45', '1212-03-15 11:36:45', 0);
+INSERT INTO `nguoi_dung` (`ma`, `ma_quyen`, `ho_ten`, `ten_dang_nhap`, `mat_khau`, `email`, `ngay_tao`, `lan_dang_nhap_cuoi`, `trang_thai`) VALUES
+(2, 1, 'Hùng Nguyễn', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'hungnguyenxuan118@gmail.com', '2012-03-14 00:00:00', '2011-11-21 00:34:01', 1),
+(6, 2, 'tuan', 'tuan', 'e10adc3949ba59abbe56e057f20f883e', 'tuan@yahoo.com', '1212-03-15 11:36:45', '1212-03-15 11:36:45', 0);
 
 -- --------------------------------------------------------
 
@@ -7426,13 +7430,11 @@ INSERT INTO `nguoi_dung` (`ma`, `ma_nguoi_dung`, `ho_ten`, `ten_dang_nhap`, `mat
 -- Table structure for table `phuong_thuc_thanh_toan`
 --
 
-DROP TABLE IF EXISTS `phuong_thuc_thanh_toan`;
-CREATE TABLE IF NOT EXISTS `phuong_thuc_thanh_toan` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `phuong_thuc_thanh_toan` (
+  `ma` int(11) NOT NULL,
   `ten_phuong_thuc` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `mo_ta` text COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `mo_ta` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `phuong_thuc_thanh_toan`
@@ -7445,25 +7447,66 @@ INSERT INTO `phuong_thuc_thanh_toan` (`ma`, `ten_phuong_thuc`, `mo_ta`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `quyen_nguoi_dung`
+--
+
+CREATE TABLE `quyen_nguoi_dung` (
+  `id` int(11) NOT NULL,
+  `ten_quyen` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `quyen_nguoi_dung`
+--
+
+INSERT INTO `quyen_nguoi_dung` (`id`, `ten_quyen`) VALUES
+(1, 'quản trị viên'),
+(2, 'chăm sóc khách hàng'),
+(3, 'nhân viên bán hàng'),
+(4, 'nhân viên tiếp thị');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quyen_nguoi_dung_menu_quan_tri`
+--
+
+CREATE TABLE `quyen_nguoi_dung_menu_quan_tri` (
+  `id` int(11) NOT NULL,
+  `id_quyen_nguoi_dung` int(11) NOT NULL,
+  `id_menu_quan_tri` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `quyen_nguoi_dung_menu_quan_tri`
+--
+
+INSERT INTO `quyen_nguoi_dung_menu_quan_tri` (`id`, `id_quyen_nguoi_dung`, `id_menu_quan_tri`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 1),
+(4, 1, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `san_pham`
 --
 
-DROP TABLE IF EXISTS `san_pham`;
-CREATE TABLE IF NOT EXISTS `san_pham` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `san_pham` (
+  `ma` int(11) NOT NULL,
   `ten_san_pham` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `ma_loai` int(11) NOT NULL,
-  `mo_ta_tom_tat` text COLLATE utf8_unicode_ci,
-  `mo_ta_chi_tiet` text COLLATE utf8_unicode_ci,
-  `don_gia` decimal(11,0) NOT NULL DEFAULT '0',
+  `mo_ta_tom_tat` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mo_ta_chi_tiet` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `don_gia` decimal(11,0) NOT NULL DEFAULT 0,
   `hinh_san_pham` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `san_pham_moi` tinyint(4) NOT NULL DEFAULT '0',
+  `san_pham_moi` tinyint(4) NOT NULL DEFAULT 0,
   `so_lan_xem` int(11) NOT NULL,
   `ngay_tao` date NOT NULL,
-  `trang_thai` tinyint(4) NOT NULL DEFAULT '1',
-  `thong_tin_khuyen_mai` text COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=225 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `trang_thai` tinyint(4) NOT NULL DEFAULT 1,
+  `thong_tin_khuyen_mai` text COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `san_pham`
@@ -7654,15 +7697,13 @@ INSERT INTO `san_pham` (`ma`, `ten_san_pham`, `ma_loai`, `mo_ta_tom_tat`, `mo_ta
 -- Table structure for table `slide_banner`
 --
 
-DROP TABLE IF EXISTS `slide_banner`;
-CREATE TABLE IF NOT EXISTS `slide_banner` (
-  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `slide_banner` (
+  `id` tinyint(4) NOT NULL,
   `title` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `hinh` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `trang_thai` tinyint(4) NOT NULL,
-  `link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `slide_banner`
@@ -7676,12 +7717,34 @@ INSERT INTO `slide_banner` (`id`, `title`, `hinh`, `trang_thai`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `token`
+--
+
+CREATE TABLE `token` (
+  `id` int(11) NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_date` datetime NOT NULL,
+  `expireted_date` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `type_token` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `token`
+--
+
+INSERT INTO `token` (`id`, `token`, `created_date`, `expireted_date`, `user_id`, `type_token`) VALUES
+(1, 'aHVuZ25ndXllbnh1YW4xMThAZ21haWwuY29tYWRtaW40MTQwOGQzMy00MGNlLTQ5YTQtOTc0Yy0zZTEwYTJmNDI4ZDA=', '2021-03-08 12:35:27', '2021-04-14 11:53:22', 2, 'authorized'),
+(2, 'dHVhbkB5YWhvby5jb210dWFuZTRlMmVlN2EtOTUxMS00ZGE5LWI5YzAtMDBmODYwOTMyYTZk', '2021-03-08 13:57:57', '2021-04-09 14:20:25', 6, 'authorized');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tuyen_dung`
 --
 
-DROP TABLE IF EXISTS `tuyen_dung`;
-CREATE TABLE IF NOT EXISTS `tuyen_dung` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tuyen_dung` (
+  `ma` int(11) NOT NULL,
   `ho_ten` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `ngay_sinh` date NOT NULL,
   `gioi_tinh` tinyint(4) NOT NULL,
@@ -7690,9 +7753,8 @@ CREATE TABLE IF NOT EXISTS `tuyen_dung` (
   `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `vi_tri_ung_tuyen` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `tu_gioi_thieu` text COLLATE utf8_unicode_ci NOT NULL,
-  `trang_thai` tinyint(4) NOT NULL,
-  PRIMARY KEY (`ma`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `trang_thai` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tuyen_dung`
@@ -7703,6 +7765,294 @@ INSERT INTO `tuyen_dung` (`ma`, `ho_ten`, `ngay_sinh`, `gioi_tinh`, `dia_chi`, `
 (30, 'hanh', '2012-03-14', 0, 'hcm', '123', 'hanh@yahoo.com', 'ke toan', 'qwe', 0),
 (31, 'petina', '2012-03-14', 0, 'ben tre', '123', 'petina@yahoo.com', 'ban hang', '123', 0),
 (32, 'pesunny', '2012-03-14', 0, 'my tho', '123', 'pesunny@yahoo.com', 'ke toan truong', '123', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `bai_viet`
+--
+ALTER TABLE `bai_viet`
+  ADD PRIMARY KEY (`ma`),
+  ADD KEY `ma_the_loai` (`ma_loai`),
+  ADD KEY `ma_tac_gia` (`ma_nguoi_dung`),
+  ADD KEY `ma_the_loai_2` (`ma_loai`),
+  ADD KEY `ma_tac_gia_2` (`ma_nguoi_dung`);
+
+--
+-- Indexes for table `bang_bao_gia`
+--
+ALTER TABLE `bang_bao_gia`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `banner_quang_cao`
+--
+ALTER TABLE `banner_quang_cao`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `bo_dem`
+--
+ALTER TABLE `bo_dem`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `cau_hinh`
+--
+ALTER TABLE `cau_hinh`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `chi_tiet_hoa_don`
+--
+ALTER TABLE `chi_tiet_hoa_don`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `cuoc_phi_van_chuyen`
+--
+ALTER TABLE `cuoc_phi_van_chuyen`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `hoa_don`
+--
+ALTER TABLE `hoa_don`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `ho_tro_truc_tuyen`
+--
+ALTER TABLE `ho_tro_truc_tuyen`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `lien_he`
+--
+ALTER TABLE `lien_he`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `loai_bai_viet`
+--
+ALTER TABLE `loai_bai_viet`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `loai_san_pham`
+--
+ALTER TABLE `loai_san_pham`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu_quan_tri`
+--
+ALTER TABLE `menu_quan_tri`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `nguoi_dung`
+--
+ALTER TABLE `nguoi_dung`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `phuong_thuc_thanh_toan`
+--
+ALTER TABLE `phuong_thuc_thanh_toan`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `quyen_nguoi_dung`
+--
+ALTER TABLE `quyen_nguoi_dung`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `quyen_nguoi_dung_menu_quan_tri`
+--
+ALTER TABLE `quyen_nguoi_dung_menu_quan_tri`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `san_pham`
+--
+ALTER TABLE `san_pham`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- Indexes for table `slide_banner`
+--
+ALTER TABLE `slide_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `token`
+--
+ALTER TABLE `token`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tuyen_dung`
+--
+ALTER TABLE `tuyen_dung`
+  ADD PRIMARY KEY (`ma`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `bai_viet`
+--
+ALTER TABLE `bai_viet`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
+-- AUTO_INCREMENT for table `bang_bao_gia`
+--
+ALTER TABLE `bang_bao_gia`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `banner_quang_cao`
+--
+ALTER TABLE `banner_quang_cao`
+  MODIFY `ma` tinyint(4) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `bo_dem`
+--
+ALTER TABLE `bo_dem`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6825;
+
+--
+-- AUTO_INCREMENT for table `cau_hinh`
+--
+ALTER TABLE `cau_hinh`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT for table `chi_tiet_hoa_don`
+--
+ALTER TABLE `chi_tiet_hoa_don`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+
+--
+-- AUTO_INCREMENT for table `cuoc_phi_van_chuyen`
+--
+ALTER TABLE `cuoc_phi_van_chuyen`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `hoa_don`
+--
+ALTER TABLE `hoa_don`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+
+--
+-- AUTO_INCREMENT for table `ho_tro_truc_tuyen`
+--
+ALTER TABLE `ho_tro_truc_tuyen`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `lien_he`
+--
+ALTER TABLE `lien_he`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `loai_bai_viet`
+--
+ALTER TABLE `loai_bai_viet`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+
+--
+-- AUTO_INCREMENT for table `loai_san_pham`
+--
+ALTER TABLE `loai_san_pham`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
+
+--
+-- AUTO_INCREMENT for table `member`
+--
+ALTER TABLE `member`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `menu_quan_tri`
+--
+ALTER TABLE `menu_quan_tri`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `nguoi_dung`
+--
+ALTER TABLE `nguoi_dung`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `phuong_thuc_thanh_toan`
+--
+ALTER TABLE `phuong_thuc_thanh_toan`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `quyen_nguoi_dung`
+--
+ALTER TABLE `quyen_nguoi_dung`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `quyen_nguoi_dung_menu_quan_tri`
+--
+ALTER TABLE `quyen_nguoi_dung_menu_quan_tri`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `san_pham`
+--
+ALTER TABLE `san_pham`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
+
+--
+-- AUTO_INCREMENT for table `slide_banner`
+--
+ALTER TABLE `slide_banner`
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `token`
+--
+ALTER TABLE `token`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tuyen_dung`
+--
+ALTER TABLE `tuyen_dung`
+  MODIFY `ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
