@@ -24,6 +24,7 @@ import {
   UserPlus as UserPlusIcon,
   Users as UsersIcon
 } from 'react-feather';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import ReceiptIcon from '@material-ui/icons/Receipt';
 import NavItem from './NavItem';
 
@@ -109,6 +110,11 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       href: '/app/quan-ly-san-pham',
       icon: ShoppingBagIcon,
       title: 'Quản lý sản phẩm'
+    },
+    {
+      href: '/app/phan-quyen',
+      icon: SupervisorAccountIcon,
+      title: 'Quản lý Phân Quyền'
     },
     {
       href: '/404',

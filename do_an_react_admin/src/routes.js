@@ -13,6 +13,7 @@ import FormUsersAdd from 'src/views/users/FormUsersAdd';
 import FormUserEdit from 'src/views/users/FormUserEdit';
 import QuanLySanPham from 'src/views/products/ProductListView';
 import TruyXuatDonHang from 'src/views/truyxuatdonhang';
+import PhanQuyen from 'src/views/phanquyen';
 
 const routes = [
   {
@@ -26,7 +27,8 @@ const routes = [
       { path: 'users/:id_user', element: <FormUserEdit /> },
       { path: 'users/them', element: <FormUsersAdd /> },
       { path: 'quan-ly-san-pham', element: <QuanLySanPham alias="quan-ly-san-pham" /> },
-      { path: 'truy-xuat-don-hang', element: <TruyXuatDonHang /> },
+      { path: 'phan-quyen', element: <PhanQuyen alias="phan-quyen" /> },
+      { path: 'truy-xuat-don-hang', element: <TruyXuatDonHang alias="truy-xuat-don-hang" /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
