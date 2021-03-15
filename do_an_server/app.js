@@ -16,6 +16,8 @@ var uploadRouter = require('./routes/upload_file');
 var productsRouter = require('./routes/products');
 var productRouter = require('./routes/product');
 var donHangRouter = require('./routes/don_hang');
+var phanQuyenRouter = require('./routes/phan_quyen');
+var menuQuanTriRouter = require('./routes/menu');
 
 var app = express();
 
@@ -68,6 +70,8 @@ app.use('/dashboard', dashboardRouter);
 app.use('/products', productsRouter);
 app.use('/product', productRouter);
 app.use('/don-hang', donHangRouter);
+app.use('/phan-quyen', phanQuyenRouter);
+app.use('/menu-quan-tri', menuQuanTriRouter);
 
 
 // catch 404 and forward to error handler

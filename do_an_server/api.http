@@ -199,3 +199,10 @@ Content-Type: application/json
 Authorization: Basic dHVhbkB5YWhvby5jb210dWFuYTBhODA2YTgtZWU4NC00N2RkLTgyOTItYWY3NzE5ZDUwYmNm
 
 {}
+
+
+###
+GET http://localhost:4000/phan-quyen
+
+###
+GET http://localhost:4000/menu-quan-tri
