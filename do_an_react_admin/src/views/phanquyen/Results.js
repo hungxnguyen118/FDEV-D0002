@@ -84,6 +84,7 @@ const Results = ({ className, danhsachphanquyen, ...rest }) => {
   const [page, setPage] = useState(0);
   const [open, setOpen] = React.useState(false);
   const [dsQuyenHienTai, setdsQuyenHienTai] = useState([]);
+  const [quyenduocchon, setQuyenDuocChon] = useState(0);
 
   const handleSelectAll = (event) => {
     let newSelectedDonHangIds;
@@ -125,6 +126,7 @@ const Results = ({ className, danhsachphanquyen, ...rest }) => {
   };
 
   const handleClickOpen = (idquyen) => {
+    setQuyenDuocChon(idquyen);
     axios.get(`http://localhost:4000/phan-quyen/${idquyen}`)
       .then((results) => {
         setdsQuyenHienTai(results.data);
@@ -137,10 +139,33 @@ const Results = ({ className, danhsachphanquyen, ...rest }) => {
 
   const handleSavePhanQuyen = () => {
     console.log('save');
+    axios.put(`http://localhost:4000/phan-quyen/${quyenduocchon}`, dsQuyenHienTai)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleProcessChangeCheckBox = (event) => {
+    console.log(event.target.name);
+    if (dsQuyenHienTai.find((itemquyenhientai) => itemquyenhientai.alias === event.target.name)) {
+      console.log('co');
+      setdsQuyenHienTai(dsQuyenHienTai.filter((itemquyenhientai) => {
+        return itemquyenhientai.alias !== event.target.name;
+      }));
+    } else {
+      console.log('khong');
+      const dataitem = {
+        alias: event.target.name
+      };
+      setdsQuyenHienTai([...dsQuyenHienTai, dataitem]);
+    }
   };
 
   return (
@@ -210,7 +235,21 @@ const Results = ({ className, danhsachphanquyen, ...rest }) => {
             <DialogContent dividers>
               {
                 rest.dsmenuquantri.map((menuquantri) => {
-                  return <FormControlLabel key={menuquantri.id} control={<Checkbox name="checkedC" checked={Boolean(dsQuyenHienTai.find((data) => data.alias === menuquantri.alias))} />} label={menuquantri.ten_menu} />;
+                  return (
+                    <FormControlLabel
+                      key={menuquantri.id}
+                      control={(
+                        <Checkbox
+                          name={menuquantri.alias}
+                          onChange={handleProcessChangeCheckBox}
+                          checked={Boolean(dsQuyenHienTai.find((data) => {
+                            return data.alias === menuquantri.alias;
+                          }))}
+                        />
+                      )}
+                      label={menuquantri.ten_menu}
+                    />
+                  );
                 })
               }
             </DialogContent>
