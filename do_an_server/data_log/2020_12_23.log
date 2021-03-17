@@ -31686,3 +31686,65 @@
 -200-{"xu_ly":"thêm user mới","data_send":{}}
 1615818991006-GET-/phan-quyen/2
 -200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980796072-POST-/user/admin-authorized
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980796091-GET-/dashboard/don-hang-so-thang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980796127-GET-/dashboard/don-hang/2016
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980843825-GET-/phan-quyen
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980843827-GET-/menu-quan-tri
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980845281-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980868009-GET-/phan-quyen/4
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615980869966-GET-/phan-quyen/3
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615981364168-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615981367631-GET-/phan-quyen/2
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615981425763-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615981432749-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615981542155-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615982387856-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615986994838-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615987015303-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615987530496-PUT-/phan-quyen/4
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615987573482-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615987581308-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":1,"alias":"truy-xuat-don-hang","ten_menu":"Truy Xuất Đơn Hàng","type_menu":"read"},{"id":2,"alias":"quan-ly-san-pham","ten_menu":"Quản Lý Sản Phẩm","type_menu":"read"},{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"}]}
+1615988076891-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":1,"alias":"truy-xuat-don-hang","ten_menu":"Truy Xuất Đơn Hàng","type_menu":"read"},{"id":2,"alias":"quan-ly-san-pham","ten_menu":"Quản Lý Sản Phẩm","type_menu":"read"},{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"}]}
+1615988152908-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":1,"alias":"truy-xuat-don-hang","ten_menu":"Truy Xuất Đơn Hàng","type_menu":"read"},{"id":2,"alias":"quan-ly-san-pham","ten_menu":"Quản Lý Sản Phẩm","type_menu":"read"},{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"}]}
+1615988191862-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":1,"alias":"truy-xuat-don-hang","ten_menu":"Truy Xuất Đơn Hàng","type_menu":"read"},{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"}]}
+1615988880852-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"}]}
+1615989028152-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"}]}
+1615989096096-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"},{"alias":"quan-ly-san-pham"},{"alias":"truy-xuat-don-hang"}]}
+1615989164086-PUT-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":[{"id":3,"alias":"phan-quyen","ten_menu":"Phân Quyền","type_menu":"read"},{"alias":"tin-tuc"},{"alias":"quan-ly-san-pham"},{"alias":"truy-xuat-don-hang"}]}
+1615989209778-GET-/phan-quyen/1
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615989224507-GET-/phan-quyen/3
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615989233956-GET-/phan-quyen/3
+-200-{"xu_ly":"thêm user mới","data_send":{}}
+1615989240426-PUT-/phan-quyen/3
+-200-{"xu_ly":"thêm user mới","data_send":[{"alias":"quan-ly-san-pham"},{"alias":"truy-xuat-don-hang"}]}
+1615989277011-GET-/phan-quyen/3
+-200-{"xu_ly":"thêm user mới","data_send":{}}
