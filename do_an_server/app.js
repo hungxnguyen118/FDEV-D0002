@@ -18,6 +18,7 @@ var productRouter = require('./routes/product');
 var donHangRouter = require('./routes/don_hang');
 var phanQuyenRouter = require('./routes/phan_quyen');
 var menuQuanTriRouter = require('./routes/menu');
+var viewLogRouter = require('./routes/view_log');
 
 var app = express();
 
@@ -26,10 +27,7 @@ app.use(cors());
 var complete_log = (req, res, next) => {
   try {
       //console.log(hahaha.length);
-      var string_log = '-200-' + JSON.stringify({
-          'xu_ly': 'thêm user mới',
-          data_send: req.body
-      }) +  '\n';
+      var string_log = '-200-' + '\n';
   
       fs.appendFileSync('./data_log/2020_12_23.log', string_log);
   }
@@ -58,7 +56,7 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use(complete_log);
+//app.use(complete_log);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -72,6 +70,7 @@ app.use('/product', productRouter);
 app.use('/don-hang', donHangRouter);
 app.use('/phan-quyen', phanQuyenRouter);
 app.use('/menu-quan-tri', menuQuanTriRouter);
+app.use('/log', viewLogRouter);
 
 
 // catch 404 and forward to error handler
@@ -84,6 +83,9 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  var string_log =  Date.now() + '-' + req.url + '-500-Server Internal Error-' + err.message + '\n';
+  fs.appendFileSync('./data_log/2020_12_23.log', string_log);
 
   // render the error page
   res.status(err.status || 500);
